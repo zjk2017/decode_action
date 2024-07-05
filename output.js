@@ -1,4 +1,4 @@
-//Fri Jul 05 2024 15:10:26 GMT+0000 (Coordinated Universal Time)
+//Fri Jul 05 2024 15:34:43 GMT+0000 (Coordinated Universal Time)
 //Base:https://github.com/echo094/decode-js
 //Modify:https://github.com/smallfawn/decode_action
 [["\u0063\u006f\u006f\u006b\u0069\u0065\u0028\u9ed8\u8ba4\u0032\u0030\u4e2a\u0029", ")\u5426/\u662F(\u884C\u6267\u5426\u662F".split("").reverse().join(""), "\u8d26\u53f7\u540d\u79f0\u0028\u53ef\u4e0d\u586b\u5199\u0029"]];
