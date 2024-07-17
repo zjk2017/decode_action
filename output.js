@@ -1,4 +1,4 @@
-//Wed Jul 17 2024 12:08:34 GMT+0000 (Coordinated Universal Time)
+//Wed Jul 17 2024 12:42:09 GMT+0000 (Coordinated Universal Time)
 //Base:https://github.com/echo094/decode-js
 //Modify:https://github.com/smallfawn/decode_action
 const ag = new Env("🍕达美乐披萨"),
