@@ -1,2085 +1,758 @@
-//Mon Aug 05 2024 15:43:48 GMT+0000 (Coordinated Universal Time)
+//Sun Aug 11 2024 06:33:17 GMT+0000 (Coordinated Universal Time)
 //Base:https://github.com/echo094/decode-js
 //Modify:https://github.com/smallfawn/decode_action
-(() => {
-  function b(al) {
-    b = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (ap) {
-      return typeof ap;
-    } : function (ap) {
-      return ap && "function" == typeof Symbol && ap.constructor === Symbol && ap !== Symbol.prototype ? "symbol" : typeof ap;
-    };
-    return b(al);
+const _0x8716db = new _0x4cda8f("北京现代");
+let _0x268653 = ["\n"],
+  _0x2fdc9f = "bjxdCookie",
+  _0x219a02 = (_0x8716db.isNode() ? process.env[_0x2fdc9f] : _0x8716db.getdata(_0x2fdc9f)) || "",
+  _0x2d9559 = [],
+  _0x2c43fb = 0,
+  _0x1b86b6 = 0,
+  _0x30fc44 = "application/json;charset=utf-8",
+  _0x1d8bc9 = "ModernCar/8.10.0 (iPhone; iOS 15.0; Scale/3.00)",
+  _0x8c33cb = "iOS",
+  _0x5403e8 = 7,
+  _0x32da0f = 8,
+  _0x49a9ae = 1.02,
+  _0x194108 = "bjxd",
+  _0x6567ed = "https://leafxcy.coding.net/api/user/leafxcy/project/validcode/shared-depot/validCode/git/blob/master/code.json";
+class _0x4c27a8 {
+  constructor(_0x17c2ed) {
+    this.index = ++_0x2c43fb;
+    this.name = this.index;
+    this.valid = false;
+    let _0x465c2e = _0x17c2ed.split("#");
+    this.token = _0x465c2e[0];
+    this.device = _0x465c2e[1] || _0x8c33cb;
   }
-  function c(al, am) {
-    var ao = "undefined" != typeof Symbol && al[Symbol.iterator] || al["@@iterator"];
-    if (!ao) {
-      if (Array.isArray(al) || (ao = g(al)) || am && al && "number" == typeof al.length) {
-        ao && (al = ao);
-        var ap = 0,
-          aq = function () {};
-        return {
-          s: aq,
-          n: function () {
-            var av = {
-              done: !0
-            };
-            return ap >= al.length ? av : {
-              done: !1,
-              value: al[ap++]
-            };
-          },
-          e: function (av) {
-            throw av;
-          },
-          f: aq
-        };
-      }
-      throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
-    }
-    var ar,
-      as = !0,
-      at = !1;
-    return {
-      s: function () {
-        ao = ao.call(al);
-      },
-      n: function () {
-        var aw = ao.next();
-        as = aw.done;
-        return aw;
-      },
-      e: function (aw) {
-        at = !0;
-        ar = aw;
-      },
-      f: function () {
-        try {
-          as || null == ao.return || ao.return();
-        } finally {
-          if (at) {
-            throw ar;
-          }
-        }
-      }
-    };
-  }
-  function d(al, am) {
-    return j(al) || i(al, am) || g(al, am) || f();
-  }
-  function f() {
-    throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
-  }
-  function g(al, am) {
-    if (al) {
-      if ("string" == typeof al) {
-        return h(al, am);
-      }
-      var an = {}.toString.call(al).slice(8, -1);
-      "Object" === an && al.constructor && (an = al.constructor.name);
-      return "Map" === an || "Set" === an ? Array.from(al) : "Arguments" === an || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(an) ? h(al, am) : void 0;
-    }
-  }
-  function h(al, am) {
-    (null == am || am > al.length) && (am = al.length);
-    for (var an = 0, ao = Array(am); an < am; an++) {
-      ao[an] = al[an];
-    }
-    return ao;
-  }
-  function i(al, am) {
-    var ao = null == al ? null : "undefined" != typeof Symbol && al[Symbol.iterator] || al["@@iterator"];
-    if (null != ao) {
-      var ap,
-        aq,
-        ar,
-        as,
-        at = [],
-        au = !0,
-        av = !1;
-      try {
-        if (ar = (ao = ao.call(al)).next, 0 === am) {
-          if (Object(ao) !== ao) {
-            return;
-          }
-          au = !1;
-        } else {
-          for (; !(au = (ap = ar.call(ao)).done) && (at.push(ap.value), at.length !== am); au = !0) {}
-        }
-      } catch (ay) {
-        av = !0;
-        aq = ay;
-      } finally {
-        try {
-          if (!au && null != ao.return && (as = ao.return(), Object(as) !== as)) {
-            return;
-          }
-        } finally {
-          if (av) {
-            throw aq;
-          }
-        }
-      }
-      return at;
-    }
-  }
-  function j(al) {
-    if (Array.isArray(al)) {
-      return al;
-    }
-  }
-  function k() {
-    'use strict';
-
-    k = function () {
-      return an;
-    };
-    var am,
-      an = {},
-      ao = Object.prototype,
-      ap = ao.hasOwnProperty,
-      aq = Object.defineProperty || function (aS, aT, aU) {
-        aS[aT] = aU.value;
-      },
-      ar = "function" == typeof Symbol ? Symbol : {},
-      as = ar.iterator || "@@iterator",
-      at = ar.asyncIterator || "@@asyncIterator",
-      au = ar.toStringTag || "@@toStringTag";
-    function av(aS, aT, aU) {
-      var aV = {
-        value: aU,
-        enumerable: !0,
-        configurable: !0,
-        writable: !0
-      };
-      Object.defineProperty(aS, aT, aV);
-      return aS[aT];
-    }
+  async taskApi(_0x3967b8 = {}) {
+    let _0x4dd0e8 = {};
     try {
-      av({}, "");
-    } catch (aT) {
-      av = function (aV, aW, aX) {
-        return aV[aW] = aX;
+      let _0x1c0362 = _0x3967b8.url.replace("//", "/").split("/")[1],
+        _0x1e768b = _0x3967b8.url;
+      if (_0x3967b8.queryParam) {
+        _0x1e768b += "?" + _0x8716db.json2str(_0x3967b8.queryParam, "&", true);
+      }
+      const _0x206c16 = {
+        Host: _0x1c0362,
+        Connection: "keep-alive",
+        token: this.token,
+        "User-Agent": _0x1d8bc9,
+        device: this.device
       };
-    }
-    function aw(aV, aW, aX, aY) {
-      var aZ = aW && aW.prototype instanceof aD ? aW : aD,
-        b0 = Object.create(aZ.prototype),
-        b1 = new aQ(aY || []);
-      aq(b0, "_invoke", {
-        value: aM(aV, aX, b1)
-      });
-      return b0;
-    }
-    function ax(aV, aW, aX) {
-      try {
-        return {
-          type: "normal",
-          arg: aV.call(aW, aX)
-        };
-      } catch (b2) {
-        var aZ = {};
-        aZ.type = "throw";
-        aZ.arg = b2;
-        return aZ;
-      }
-    }
-    an.wrap = aw;
-    var ay = "suspendedStart",
-      az = "suspendedYield",
-      aA = "executing",
-      aB = "completed",
-      aC = {};
-    function aD() {}
-    function aE() {}
-    function aF() {}
-    var aG = {};
-    av(aG, as, function () {
-      return this;
-    });
-    var aH = Object.getPrototypeOf,
-      aI = aH && aH(aH(aR([])));
-    aI && aI !== ao && ap.call(aI, as) && (aG = aI);
-    aF.prototype = aD.prototype = Object.create(aG);
-    var aJ = aF.prototype;
-    function aK(aV) {
-      ["next", "throw", "return"].forEach(function (aY) {
-        av(aV, aY, function (b1) {
-          return this._invoke(aY, b1);
-        });
-      });
-    }
-    function aL(aV, aW) {
-      function b0(b1, b2, b3, b4) {
-        var b6 = ax(aV[b1], aV, b2);
-        if ("throw" !== b6.type) {
-          var b7 = b6.arg,
-            b8 = b7.value;
-          return b8 && "object" == b(b8) && ap.call(b8, "__await") ? aW.resolve(b8.__await).then(function (ba) {
-            b0("next", ba, b3, b4);
-          }, function (ba) {
-            b0("throw", ba, b3, b4);
-          }) : aW.resolve(b8).then(function (ba) {
-            b7.value = ba;
-            b3(b7);
-          }, function (ba) {
-            return b0("throw", ba, b3, b4);
-          });
+      const _0x35520c = {
+        url: _0x1e768b,
+        headers: _0x206c16,
+        timeout: 5000
+      };
+      if (_0x3967b8.body) {
+        _0x35520c.headers["Content-Type"] = _0x3967b8["Content-Type"] || _0x30fc44;
+        if (typeof _0x3967b8.body === "object") {
+          if (_0x35520c.headers["Content-Type"].includes("json")) {
+            _0x35520c.body = JSON.stringify(_0x3967b8.body);
+          } else {
+            for (let _0x35ecf0 in _0x3967b8.body) {
+              typeof _0x3967b8.body[_0x35ecf0] === "object" && (_0x3967b8.body[_0x35ecf0] = JSON.stringify(_0x3967b8.body[_0x35ecf0]));
+            }
+            _0x35520c.body = _0x8716db.json2str(_0x3967b8.body, "&");
+          }
+        } else {
+          _0x35520c.body = _0x3967b8.body;
         }
-        b4(b6.arg);
       }
-      var aY;
-      aq(this, "_invoke", {
-        value: function (b1, b2) {
-          function b5() {
-            return new aW(function (b7, b8) {
-              b0(b1, b2, b7, b8);
+      if (_0x3967b8.urlObjectParam) {
+        Object.assign(_0x35520c, _0x3967b8.urlObjectParam);
+      }
+      if (_0x3967b8.headerParam) {
+        Object.assign(_0x35520c.headers, _0x3967b8.headerParam);
+      }
+      _0x4dd0e8 = Object.assign({}, await _0x521f1c(_0x3967b8.method, _0x35520c));
+      _0x4dd0e8.statusCode = _0x4dd0e8?.["err"]?.["response"]?.["statusCode"] || _0x4dd0e8?.["resp"]?.["statusCode"];
+      _0x4dd0e8.statusCode != 200 && console.log("[" + _0x3967b8.fn + "]返回[" + _0x4dd0e8.statusCode + "]");
+      if (_0x4dd0e8?.["resp"]?.["body"]) {
+        if (typeof _0x4dd0e8.resp.body === "object") {
+          _0x4dd0e8.result = _0x4dd0e8.resp.body;
+        } else {
+          try {
+            _0x4dd0e8.result = JSON.parse(_0x4dd0e8.resp.body);
+          } catch (_0x3866e6) {
+            console.log("[" + _0x3967b8.fn + "]没有返回json数据");
+            _0x4dd0e8.result = _0x4dd0e8.resp.body;
+          }
+        }
+      }
+    } catch (_0x1e3872) {
+      console.log(_0x1e3872);
+    } finally {
+      return Promise.resolve(_0x4dd0e8);
+    }
+  }
+  async getUserInfo() {
+    let _0x38b266 = {};
+    try {
+      const _0x2c6f90 = {
+        fn: "getUserInfo",
+        method: "get",
+        url: "https://bm2-api.bluemembers.com.cn/v1/app/account/users/info"
+      };
+      _0x38b266 = Object.assign({}, await this.taskApi(_0x2c6f90));
+      if (typeof _0x38b266?.["result"] === "object") {
+        let _0x4299a4 = _0x38b266.result;
+        if (_0x4299a4.code == 0) {
+          this.valid = true;
+          this.hid = _0x4299a4.data.hid;
+          this.name = _0x4299a4.data.nickname;
+          this.phone = _0x4299a4.data.phone;
+          this.mixPhone = this.phone.slice(0, 3) + "****" + this.phone.slice(7, 13);
+          this.nid = _0x4299a4.data.nid;
+          this.score = _0x4299a4.data.score_value;
+          this.isSign = _0x4299a4.data.if_signed_in;
+          _0x8716db.logAndNotify("昵称：" + this.name);
+          _0x8716db.logAndNotify("手机：" + this.mixPhone);
+        } else {
+          _0x8716db.logAndNotify("登录失败：" + _0x4299a4.msg);
+        }
+      }
+    } catch (_0x304632) {
+      console.log(_0x304632);
+    } finally {
+      return Promise.resolve(_0x38b266);
+    }
+  }
+  async getScore() {
+    let _0x12fb1e = {};
+    try {
+      const _0x58462f = {
+        fn: "getScore",
+        method: "get",
+        url: "https://bm2-api.bluemembers.com.cn/v1/app/account/users/info"
+      };
+      _0x12fb1e = Object.assign({}, await this.taskApi(_0x58462f));
+      if (typeof _0x12fb1e?.["result"] === "object") {
+        let _0x332edd = _0x12fb1e.result;
+        _0x332edd.code == 0 ? (this.score = _0x332edd.data.score_value, _0x8716db.logAndNotify("积分：" + this.score)) : console.log("查询积分失败：" + _0x332edd.msg);
+      }
+    } catch (_0x163403) {
+      console.log(_0x163403);
+    } finally {
+      return Promise.resolve(_0x12fb1e);
+    }
+  }
+  async reward_list() {
+    let _0x3f6116 = {};
+    try {
+      const _0x118716 = {
+        fn: "reward_list",
+        method: "get",
+        url: "https://bm2-api.bluemembers.com.cn/v1/app/user/reward_list"
+      };
+      _0x3f6116 = Object.assign({}, await this.taskApi(_0x118716));
+      if (typeof _0x3f6116?.["result"] === "object") {
+        let _0x56041 = _0x3f6116.result;
+        if (_0x56041.code == 0) {
+          let _0x2fbcf1 = _0x56041.data.list.filter(_0x5ae0ff => _0x5ae0ff.hid == _0x56041.data.hid),
+            _0x4a8869 = _0x2fbcf1[0].score;
+          _0x4a8869 >= _0x5403e8 ? (console.log("获取到签到积分" + _0x4a8869 + "的请求，满足门槛，进行签到"), await this.reward_report(_0x56041.data), this.isSign = true) : console.log("获取到签到积分" + _0x4a8869 + "的请求，小于门槛，不进行签到");
+        } else {
+          console.log("获取签到奖励信息失败：" + _0x56041.msg);
+        }
+      }
+    } catch (_0x64bff7) {
+      console.log(_0x64bff7);
+    } finally {
+      return Promise.resolve(_0x3f6116);
+    }
+  }
+  async reward_report(_0x589132) {
+    let _0x46c394 = {};
+    try {
+      const _0x34c67b = {
+        hid: _0x589132.hid,
+        hash: _0x589132.rewardHash,
+        sm_deviceId: ""
+      };
+      const _0x492fab = {
+        fn: "reward_report",
+        method: "post",
+        url: "https://bm2-api.bluemembers.com.cn/v1/app/user/reward_report",
+        body: _0x34c67b
+      };
+      _0x46c394 = Object.assign({}, await this.taskApi(_0x492fab));
+      if (typeof _0x46c394?.["result"] === "object") {
+        let _0x435e80 = _0x46c394.result;
+        _0x435e80.code == 0 ? console.log("签到成功") : console.log("签到失败：" + _0x435e80.msg);
+      }
+    } catch (_0x149902) {
+      console.log(_0x149902);
+    } finally {
+      return Promise.resolve(_0x46c394);
+    }
+  }
+  async taskList() {
+    let _0x17e315 = {};
+    try {
+      const _0xa3d25c = {
+        fn: "taskList",
+        method: "get",
+        url: "https://bm2-api.bluemembers.com.cn/v1/app/user/task/list"
+      };
+      _0x17e315 = Object.assign({}, await this.taskApi(_0xa3d25c));
+      if (typeof _0x17e315?.["result"] === "object") {
+        let _0x537fef = _0x17e315.result;
+        _0x537fef.code == 0 ? (!_0x537fef.data.action12.status && (await this.appScore(12)), !_0x537fef.data.action39.status && (await this.ask_info())) : console.log("获取任务列表失败：" + _0x537fef.msg);
+      }
+    } catch (_0x217171) {
+      console.log(_0x217171);
+    } finally {
+      return Promise.resolve(_0x17e315);
+    }
+  }
+  async appScore(_0x2e08b2) {
+    let _0x56f9a9 = {};
+    try {
+      let _0x139670 = {
+        fn: "appScore",
+        method: "post",
+        url: "https://bm2-api.bluemembers.com.cn/v1/app/score",
+        body: {
+          action: Number(_0x2e08b2)
+        }
+      };
+      _0x56f9a9 = Object.assign({}, await this.taskApi(_0x139670));
+      if (typeof _0x56f9a9?.["result"] === "object") {
+        let _0x2398d7 = _0x56f9a9.result;
+        _0x2398d7.code == 0 ? _0x2398d7.data.is_stop ? console.log("完成任务[" + _0x2e08b2 + "]成功，获得" + _0x2398d7.data.score + "积分") : console.log("任务[" + _0x2e08b2 + "]已完成过") : console.log("完成任务[" + _0x2e08b2 + "]失败：" + _0x2398d7.msg);
+      }
+    } catch (_0x4aaf25) {
+      console.log(_0x4aaf25);
+    } finally {
+      return Promise.resolve(_0x56f9a9);
+    }
+  }
+  async ask_info() {
+    let _0x8f513e = {};
+    try {
+      let _0x2a7cc6 = {
+        fn: "ask_info",
+        method: "get",
+        url: "https://bm2-api.bluemembers.com.cn/v1/app/special/daily/ask_info",
+        queryParam: {
+          date: _0x8716db.time("yyyyMMdd")
+        }
+      };
+      _0x8f513e = Object.assign({}, await this.taskApi(_0x2a7cc6));
+      if (typeof _0x8f513e?.["result"] === "object") {
+        let _0x5469c5 = _0x8f513e.result;
+        if (_0x5469c5.code == 0) {
+          if (_0x5469c5.data.state == 1) {
+            console.log("开始答题：");
+            console.log(_0x5469c5.data.question_info.content);
+            for (let _0x296803 of _0x5469c5.data.question_info.option) {
+              console.log(_0x296803.option + ": " + _0x296803.option_content);
+            }
+            await this.ask_answer(_0x5469c5.data.question_info);
+          } else {
+            console.log("今日已完成答题");
+          }
+        } else {
+          console.log("获取任务列表失败：" + _0x5469c5.msg);
+        }
+      }
+    } catch (_0x45d564) {
+      console.log(_0x45d564);
+    } finally {
+      return Promise.resolve(_0x8f513e);
+    }
+  }
+  async ask_answer(_0x4ee39a) {
+    let _0x320116 = {};
+    try {
+      let _0x16af4f = _0x8716db.randomList(_0x4ee39a.option);
+      console.log("随机选择[" + _0x16af4f.option + "]");
+      const _0x5c6056 = {
+        answer: _0x16af4f.option,
+        questions_hid: _0x4ee39a.questions_hid
+      };
+      const _0x17ec0d = {
+        fn: "ask_answer",
+        method: "post",
+        url: "https://bm2-api.bluemembers.com.cn/v1/app/special/daily/ask_answer",
+        body: _0x5c6056
+      };
+      _0x320116 = Object.assign({}, await this.taskApi(_0x17ec0d));
+      if (typeof _0x320116?.["result"] === "object") {
+        let _0x30d161 = _0x320116.result;
+        _0x30d161.code == 0 ? _0x30d161.data.state == 2 ? console.log("回答正确，获得" + _0x30d161.data.answer_score + "积分") : console.log("回答错误") : console.log("回答失败：" + _0x30d161.msg);
+      }
+    } catch (_0x26cc04) {
+      console.log(_0x26cc04);
+    } finally {
+      return Promise.resolve(_0x320116);
+    }
+  }
+  async userTask() {
+    let _0x4937de = {};
+    try {
+      _0x8716db.logAndNotify("\n============= 账号[" + this.index + "] =============");
+      await this.getUserInfo();
+      if (!this.valid) {
+        return;
+      }
+      for (let _0x50258e = 0; _0x50258e < 50 && !this.isSign; _0x50258e++) {
+        await this.reward_list();
+      }
+      await this.taskList();
+      await this.getScore();
+    } catch (_0x5859d2) {
+      console.log(_0x5859d2);
+    } finally {
+      return Promise.resolve(_0x4937de);
+    }
+  }
+}
+!(async () => {
+  if (typeof $request !== "undefined") {
+    await _0x14afab();
+  } else {
+    if (!(await _0x2b9e78())) {
+      return;
+    }
+    if (!_0x5783c6()) {
+      return;
+    }
+    for (let _0x446442 of _0x2d9559) {
+      await _0x446442.userTask();
+    }
+  }
+})().catch(_0x2a23c4 => console.log(_0x2a23c4)).finally(() => _0x8716db.done());
+async function _0x14afab() {
+  if ($request.url.includes("v1/app/white/lovecar/banner")) {
+    try {
+      let _0x13b4b6 = $request.headers.token,
+        _0x4dcfbd = _0x268653[0];
+      for (let _0x44475f of _0x268653) {
+        if (_0x219a02?.["includes"](_0x44475f)) {
+          _0x4dcfbd = _0x44475f;
+          break;
+        }
+      }
+      if (!_0x219a02?.["includes"](_0x13b4b6)) {
+        let _0x1b71ef = _0x219a02 ? _0x219a02.split(_0x4dcfbd) : [];
+        _0x1b71ef.push(_0x13b4b6);
+        _0x219a02 = _0x1b71ef.join(_0x4dcfbd);
+        _0x8716db.setdata(_0x219a02, _0x2fdc9f);
+        _0x8716db.msg("获取第" + _0x1b71ef.length + "个账户CK成功，保存到变量[" + _0x2fdc9f + "]: " + _0x13b4b6);
+      }
+    } catch (_0x4cf3b5) {}
+  }
+}
+function _0x5783c6() {
+  if (_0x219a02) {
+    let _0x3f061f = _0x268653[0];
+    for (let _0x4cde89 of _0x268653) {
+      if (_0x219a02.indexOf(_0x4cde89) > -1) {
+        _0x3f061f = _0x4cde89;
+        break;
+      }
+    }
+    for (let _0x442d1d of _0x219a02.split(_0x3f061f)) {
+      if (_0x442d1d) {
+        _0x2d9559.push(new _0x4c27a8(_0x442d1d));
+      }
+    }
+    _0x1b86b6 = _0x2d9559.length;
+  } else {
+    console.log("未找到CK: " + _0x2fdc9f);
+    return false;
+  }
+  console.log("共找到" + _0x1b86b6 + "个账号");
+  return true;
+}
+async function _0x2b9e78(_0x52f9ac = 0) {
+  let _0x454209 = false;
+  try {
+    const _0x2fca12 = {
+      url: _0x6567ed,
+      timeout: 5000
+    };
+    let _0x239829 = null,
+      _0x457fa9 = await _0x521f1c("get", _0x2fca12);
+    if (_0x457fa9.err) {
+      console.log("服务器错误[" + _0x457fa9?.["resp"]?.["statusCode"] + "]，重试...");
+    } else {
+      try {
+        _0x239829 = JSON.parse(_0x457fa9.resp.body);
+        _0x239829?.["code"] == 0 && (_0x239829 = JSON.parse(_0x239829.data.file.data));
+      } catch (_0x5d759c) {}
+    }
+    if (!_0x239829) {
+      if (_0x52f9ac < _0x32da0f) {
+        _0x454209 = await _0x2b9e78(++_0x52f9ac);
+      }
+    } else {
+      _0x239829?.["commonNotify"] && _0x239829.commonNotify.length > 0 && _0x8716db.logAndNotify(_0x239829.commonNotify.join("\n") + "\n");
+      _0x239829?.["commonMsg"] && _0x239829.commonMsg.length > 0 && console.log(_0x239829.commonMsg.join("\n") + "\n");
+      if (_0x239829[_0x194108]) {
+        let _0x1d6833 = _0x239829[_0x194108];
+        _0x1d6833.status == 0 ? _0x49a9ae >= _0x1d6833.version ? (_0x454209 = true, console.log(_0x1d6833.msg[_0x1d6833.status]), console.log(_0x1d6833.updateMsg), console.log("现在运行的脚本版本是：" + _0x49a9ae + "，最新脚本版本：" + _0x1d6833.latestVersion)) : console.log(_0x1d6833.versionMsg) : console.log(_0x1d6833.msg[_0x1d6833.status]);
+      } else {
+        console.log(_0x239829.errorMsg);
+      }
+    }
+  } catch (_0x3f1377) {
+    console.log(_0x3f1377);
+  } finally {
+    return Promise.resolve(_0x454209);
+  }
+}
+async function _0x521f1c(_0x263b8f, _0x513b4c) {
+  return new Promise(_0x40a2b3 => {
+    _0x8716db.send(_0x263b8f, _0x513b4c, async (_0x6e577d, _0x129293, _0xf085c6) => {
+      const _0x348782 = {
+        err: _0x6e577d,
+        req: _0x129293,
+        resp: _0xf085c6
+      };
+      _0x40a2b3(_0x348782);
+    });
+  });
+}
+function _0x4cda8f(_0x1e4724, _0xff6f77) {
+  "undefined" != typeof process && JSON.stringify(process.env).indexOf("GITHUB") > -1 && process.exit(0);
+  return new class {
+    constructor(_0x4178f5, _0x2ac14c) {
+      this.name = _0x4178f5;
+      this.notifyStr = "";
+      this.startTime = new Date().getTime();
+      Object.assign(this, _0x2ac14c);
+      console.log(this.name + " 开始运行：\n");
+    }
+    isNode() {
+      return "undefined" != typeof module && !!module.exports;
+    }
+    isQuanX() {
+      return "undefined" != typeof $task;
+    }
+    isSurge() {
+      return "undefined" != typeof $httpClient && "undefined" == typeof $loon;
+    }
+    isLoon() {
+      return "undefined" != typeof $loon;
+    }
+    getdata(_0x4fefce) {
+      let _0x3782e9 = this.getval(_0x4fefce);
+      if (/^@/.test(_0x4fefce)) {
+        const [, _0x34b308, _0x48c0c3] = /^@(.*?)\.(.*?)$/.exec(_0x4fefce),
+          _0x31bfd6 = _0x34b308 ? this.getval(_0x34b308) : "";
+        if (_0x31bfd6) {
+          try {
+            const _0x479c6a = JSON.parse(_0x31bfd6);
+            _0x3782e9 = _0x479c6a ? this.lodash_get(_0x479c6a, _0x48c0c3, "") : _0x3782e9;
+          } catch (_0x4facad) {
+            _0x3782e9 = "";
+          }
+        }
+      }
+      return _0x3782e9;
+    }
+    setdata(_0x4beabf, _0x590b04) {
+      let _0x38fc86 = !1;
+      if (/^@/.test(_0x590b04)) {
+        const [, _0x20017f, _0x55f66f] = /^@(.*?)\.(.*?)$/.exec(_0x590b04),
+          _0x3e34f7 = this.getval(_0x20017f),
+          _0x3a6458 = _0x20017f ? "null" === _0x3e34f7 ? null : _0x3e34f7 || "{}" : "{}";
+        try {
+          const _0x2b471b = JSON.parse(_0x3a6458);
+          this.lodash_set(_0x2b471b, _0x55f66f, _0x4beabf);
+          _0x38fc86 = this.setval(JSON.stringify(_0x2b471b), _0x20017f);
+        } catch (_0x1494d0) {
+          const _0xd89f1b = {};
+          this.lodash_set(_0xd89f1b, _0x55f66f, _0x4beabf);
+          _0x38fc86 = this.setval(JSON.stringify(_0xd89f1b), _0x20017f);
+        }
+      } else {
+        _0x38fc86 = this.setval(_0x4beabf, _0x590b04);
+      }
+      return _0x38fc86;
+    }
+    getval(_0x54eb3e) {
+      return this.isSurge() || this.isLoon() ? $persistentStore.read(_0x54eb3e) : this.isQuanX() ? $prefs.valueForKey(_0x54eb3e) : this.isNode() ? (this.data = this.loaddata(), this.data[_0x54eb3e]) : this.data && this.data[_0x54eb3e] || null;
+    }
+    setval(_0x491870, _0x2145f6) {
+      return this.isSurge() || this.isLoon() ? $persistentStore.write(_0x491870, _0x2145f6) : this.isQuanX() ? $prefs.setValueForKey(_0x491870, _0x2145f6) : this.isNode() ? (this.data = this.loaddata(), this.data[_0x2145f6] = _0x491870, this.writedata(), !0) : this.data && this.data[_0x2145f6] || null;
+    }
+    send(_0x30ed81, _0x46cad7, _0x1cc856 = () => {}) {
+      if (_0x30ed81 != "get" && _0x30ed81 != "post" && _0x30ed81 != "put" && _0x30ed81 != "delete") {
+        console.log("无效的http方法：" + _0x30ed81);
+        return;
+      }
+      if (_0x30ed81 == "get" && _0x46cad7.headers) {
+        delete _0x46cad7.headers["Content-Type"];
+        delete _0x46cad7.headers["Content-Length"];
+      } else {
+        if (_0x46cad7.body && _0x46cad7.headers) {
+          if (!_0x46cad7.headers["Content-Type"]) {
+            _0x46cad7.headers["Content-Type"] = "application/x-www-form-urlencoded";
+          }
+        }
+      }
+      if (this.isSurge() || this.isLoon()) {
+        if (this.isSurge() && this.isNeedRewrite) {
+          _0x46cad7.headers = _0x46cad7.headers || {};
+          const _0x26fc4f = {
+            "X-Surge-Skip-Scripting": !1
+          };
+          Object.assign(_0x46cad7.headers, _0x26fc4f);
+        }
+        const _0x3a24fc = {
+          method: _0x30ed81,
+          url: _0x46cad7.url,
+          headers: _0x46cad7.headers,
+          timeout: _0x46cad7.timeout,
+          data: _0x46cad7.body
+        };
+        if (_0x30ed81 == "get") {
+          delete _0x3a24fc.data;
+        }
+        $axios(_0x3a24fc).then(_0x5bd58f => {
+          const {
+              status: _0x170536,
+              request: _0x1e7cb3,
+              headers: _0x468f75,
+              data: _0x580b03
+            } = _0x5bd58f,
+            _0x571f3c = {
+              statusCode: _0x170536,
+              headers: _0x468f75,
+              body: _0x580b03
+            };
+          _0x1cc856(null, _0x1e7cb3, _0x571f3c);
+        }).catch(_0x4bda4a => console.log(_0x4bda4a));
+      } else {
+        if (this.isQuanX()) {
+          const _0x327740 = {
+            hints: !1
+          };
+          _0x46cad7.method = _0x30ed81.toUpperCase();
+          this.isNeedRewrite && (_0x46cad7.opts = _0x46cad7.opts || {}, Object.assign(_0x46cad7.opts, _0x327740));
+          $task.fetch(_0x46cad7).then(_0x54076a => {
+            const {
+                statusCode: _0x1a879b,
+                request: _0x425de9,
+                headers: _0x3d8419,
+                body: _0x40f74b
+              } = _0x54076a,
+              _0x206c23 = {
+                statusCode: _0x1a879b,
+                headers: _0x3d8419,
+                body: _0x40f74b
+              };
+            _0x1cc856(null, _0x425de9, _0x206c23);
+          }, _0x3c58de => _0x1cc856(_0x3c58de));
+        } else {
+          if (this.isNode()) {
+            this.got = this.got ? this.got : require("got");
+            const {
+                url: _0x5838e9,
+                ..._0x4db42f
+              } = _0x46cad7,
+              _0x527bb1 = {
+                followRedirect: false
+              };
+            this.instance = this.got.extend(_0x527bb1);
+            this.instance[_0x30ed81](_0x5838e9, _0x4db42f).then(_0x5339a9 => {
+              const {
+                  statusCode: _0x3bc338,
+                  request: _0x576247,
+                  headers: _0x6e3fd4,
+                  body: _0x1a837a
+                } = _0x5339a9,
+                _0x420bc3 = {
+                  statusCode: _0x3bc338,
+                  headers: _0x6e3fd4,
+                  body: _0x1a837a
+                };
+              _0x1cc856(null, _0x576247, _0x420bc3);
+            }, _0x86d1ba => {
+              const {
+                message: _0x53d502,
+                request: _0x507dc9,
+                response: _0x598f0c
+              } = _0x86d1ba;
+              _0x1cc856(_0x53d502, _0x507dc9, _0x598f0c);
             });
           }
-          return aY = aY ? aY.then(b5, b5) : b5();
-        }
-      });
-    }
-    function aM(aV, aW, aX) {
-      var aZ = ay;
-      return function (b0, b1) {
-        if (aZ === aA) {
-          throw Error("Generator is already running");
-        }
-        if (aZ === aB) {
-          if ("throw" === b0) {
-            throw b1;
-          }
-          var b3 = {
-            value: am,
-            done: !0
-          };
-          return b3;
-        }
-        for (aX.method = b0, aX.arg = b1;;) {
-          var b4 = aX.delegate;
-          if (b4) {
-            var b5 = aN(b4, aX);
-            if (b5) {
-              if (b5 === aC) {
-                continue;
-              }
-              return b5;
-            }
-          }
-          if ("next" === aX.method) {
-            aX.sent = aX._sent = aX.arg;
-          } else {
-            if ("throw" === aX.method) {
-              if (aZ === ay) {
-                throw aZ = aB, aX.arg;
-              }
-              aX.dispatchException(aX.arg);
-            } else {
-              "return" === aX.method && aX.abrupt("return", aX.arg);
-            }
-          }
-          aZ = aA;
-          var b6 = ax(aV, aW, aX);
-          if ("normal" === b6.type) {
-            if (aZ = aX.done ? aB : az, b6.arg === aC) {
-              continue;
-            }
-            var b7 = {};
-            b7.value = b6.arg;
-            b7.done = aX.done;
-            return b7;
-          }
-          "throw" === b6.type && (aZ = aB, aX.method = "throw", aX.arg = b6.arg);
-        }
-      };
-    }
-    function aN(aV, aW) {
-      var b0 = aW.method,
-        b1 = aV.iterator[b0];
-      if (b1 === am) {
-        aW.delegate = null;
-        "throw" === b0 && aV.iterator.return && (aW.method = "return", aW.arg = am, aN(aV, aW), "throw" === aW.method) || "return" !== b0 && (aW.method = "throw", aW.arg = new TypeError("The iterator does not provide a '" + b0 + "' method"));
-        return aC;
-      }
-      var aZ = ax(b1, aV.iterator, aW.arg);
-      if ("throw" === aZ.type) {
-        aW.method = "throw";
-        aW.arg = aZ.arg;
-        aW.delegate = null;
-        return aC;
-      }
-      var b2 = aZ.arg;
-      return b2 ? b2.done ? (aW[aV.resultName] = b2.value, aW.next = aV.nextLoc, "return" !== aW.method && (aW.method = "next", aW.arg = am), aW.delegate = null, aC) : b2 : (aW.method = "throw", aW.arg = new TypeError("iterator result is not an object"), aW.delegate = null, aC);
-    }
-    function aO(aV) {
-      var aW = {
-        tryLoc: aV[0]
-      };
-      var aX = aW;
-      1 in aV && (aX.catchLoc = aV[1]);
-      2 in aV && (aX.finallyLoc = aV[2], aX.afterLoc = aV[3]);
-      this.tryEntries.push(aX);
-    }
-    function aP(aV) {
-      var aY = aV.completion || {};
-      aY.type = "normal";
-      delete aY.arg;
-      aV.completion = aY;
-    }
-    function aQ(aV) {
-      var aW = {
-        tryLoc: "root"
-      };
-      this.tryEntries = [aW];
-      aV.forEach(aO, this);
-      this.reset(!0);
-    }
-    function aR(aV) {
-      if (aV || "" === aV) {
-        var aY = aV[as];
-        if (aY) {
-          return aY.call(aV);
-        }
-        if ("function" == typeof aV.next) {
-          return aV;
-        }
-        if (!isNaN(aV.length)) {
-          var aZ = -1,
-            b0 = function b3() {
-              for (; ++aZ < aV.length;) {
-                if (ap.call(aV, aZ)) {
-                  b3.value = aV[aZ];
-                  b3.done = !1;
-                  return b3;
-                }
-              }
-              b3.value = am;
-              b3.done = !0;
-              return b3;
-            };
-          return b0.next = b0;
         }
       }
-      throw new TypeError(b(aV) + " is not iterable");
     }
-    aE.prototype = aF;
-    aq(aJ, "constructor", {
-      value: aF,
-      configurable: !0
-    });
-    aq(aF, "constructor", {
-      value: aE,
-      configurable: !0
-    });
-    aE.displayName = av(aF, au, "GeneratorFunction");
-    an.isGeneratorFunction = function (aV) {
-      var aX = "function" == typeof aV && aV.constructor;
-      return !!aX && (aX === aE || "GeneratorFunction" === (aX.displayName || aX.name));
-    };
-    an.mark = function (aV) {
-      Object.setPrototypeOf ? Object.setPrototypeOf(aV, aF) : (aV.__proto__ = aF, av(aV, au, "GeneratorFunction"));
-      aV.prototype = Object.create(aJ);
-      return aV;
-    };
-    an.awrap = function (aV) {
-      var aW = {
-        __await: aV
-      };
-      return aW;
-    };
-    aK(aL.prototype);
-    av(aL.prototype, at, function () {
-      return this;
-    });
-    an.AsyncIterator = aL;
-    an.async = function (aV, aW, aX, aY, aZ) {
-      void 0 === aZ && (aZ = Promise);
-      var b1 = new aL(aw(aV, aW, aX, aY), aZ);
-      return an.isGeneratorFunction(aW) ? b1 : b1.next().then(function (b3) {
-        return b3.done ? b3.value : b1.next();
-      });
-    };
-    aK(aJ);
-    av(aJ, au, "Generator");
-    av(aJ, as, function () {
-      return this;
-    });
-    av(aJ, "toString", function () {
-      return "[object Generator]";
-    });
-    an.keys = function (aV) {
-      var aY = Object(aV),
-        aZ = [];
-      for (var b0 in aY) aZ.push(b0);
-      aZ.reverse();
-      return function b2() {
-        for (; aZ.length;) {
-          var b3 = aZ.pop();
-          if (b3 in aY) {
-            b2.value = b3;
-            b2.done = !1;
-            return b2;
-          }
-        }
-        b2.done = !0;
-        return b2;
-      };
-    };
-    an.values = aR;
-    aQ.prototype = {
-      constructor: aQ,
-      reset: function (aV) {
-        if (this.prev = 0, this.next = 0, this.sent = this._sent = am, this.done = !1, this.delegate = null, this.method = "next", this.arg = am, this.tryEntries.forEach(aP), !aV) {
-          for (var aW in this) "t" === aW.charAt(0) && ap.call(this, aW) && !isNaN(+aW.slice(1)) && (this[aW] = am);
-        }
-      },
-      stop: function () {
-        this.done = !0;
-        var aV = this.tryEntries[0].completion;
-        if ("throw" === aV.type) {
-          throw aV.arg;
-        }
-        return this.rval;
-      },
-      dispatchException: function (aV) {
-        if (this.done) {
-          throw aV;
-        }
-        var aX = this;
-        function b4(b5, b6) {
-          b0.type = "throw";
-          b0.arg = aV;
-          aX.next = b5;
-          b6 && (aX.method = "next", aX.arg = am);
-          return !!b6;
-        }
-        for (var aY = this.tryEntries.length - 1; aY >= 0; --aY) {
-          var aZ = this.tryEntries[aY],
-            b0 = aZ.completion;
-          if ("root" === aZ.tryLoc) {
-            return b4("end");
-          }
-          if (aZ.tryLoc <= this.prev) {
-            var b1 = ap.call(aZ, "catchLoc"),
-              b2 = ap.call(aZ, "finallyLoc");
-            if (b1 && b2) {
-              if (this.prev < aZ.catchLoc) {
-                return b4(aZ.catchLoc, !0);
-              }
-              if (this.prev < aZ.finallyLoc) {
-                return b4(aZ.finallyLoc);
-              }
-            } else {
-              if (b1) {
-                if (this.prev < aZ.catchLoc) {
-                  return b4(aZ.catchLoc, !0);
-                }
-              } else {
-                if (!b2) {
-                  throw Error("try statement without catch or finally");
-                }
-                if (this.prev < aZ.finallyLoc) {
-                  return b4(aZ.finallyLoc);
-                }
-              }
-            }
-          }
-        }
-      },
-      abrupt: function (aV, aW) {
-        for (var aX = this.tryEntries.length - 1; aX >= 0; --aX) {
-          var aY = this.tryEntries[aX];
-          if (aY.tryLoc <= this.prev && ap.call(aY, "finallyLoc") && this.prev < aY.finallyLoc) {
-            var aZ = aY;
-            break;
-          }
-        }
-        aZ && ("break" === aV || "continue" === aV) && aZ.tryLoc <= aW && aW <= aZ.finallyLoc && (aZ = null);
-        var b0 = aZ ? aZ.completion : {};
-        b0.type = aV;
-        b0.arg = aW;
-        return aZ ? (this.method = "next", this.next = aZ.finallyLoc, aC) : this.complete(b0);
-      },
-      complete: function (aV, aW) {
-        if ("throw" === aV.type) {
-          throw aV.arg;
-        }
-        "break" === aV.type || "continue" === aV.type ? this.next = aV.arg : "return" === aV.type ? (this.rval = this.arg = aV.arg, this.method = "return", this.next = "end") : "normal" === aV.type && aW && (this.next = aW);
-        return aC;
-      },
-      finish: function (aV) {
-        for (var aW = this.tryEntries.length - 1; aW >= 0; --aW) {
-          var aX = this.tryEntries[aW];
-          if (aX.finallyLoc === aV) {
-            this.complete(aX.completion, aX.afterLoc);
-            aP(aX);
-            return aC;
-          }
-        }
-      },
-      catch: function (aV) {
-        for (var aX = this.tryEntries.length - 1; aX >= 0; --aX) {
-          var aY = this.tryEntries[aX];
-          if (aY.tryLoc === aV) {
-            var aZ = aY.completion;
-            if ("throw" === aZ.type) {
-              var b0 = aZ.arg;
-              aP(aY);
-            }
-            return b0;
-          }
-        }
-        throw Error("illegal catch attempt");
-      },
-      delegateYield: function (aV, aW, aX) {
-        this.delegate = {
-          iterator: aR(aV),
-          resultName: aW,
-          nextLoc: aX
+    time(_0x2ef619, _0x16db29 = null) {
+      let _0x2c3750 = _0x16db29 ? new Date(_0x16db29) : new Date(),
+        _0x5cd64f = {
+          "M+": _0x2c3750.getMonth() + 1,
+          "d+": _0x2c3750.getDate(),
+          "h+": _0x2c3750.getHours(),
+          "m+": _0x2c3750.getMinutes(),
+          "s+": _0x2c3750.getSeconds(),
+          "q+": Math.floor((_0x2c3750.getMonth() + 3) / 3),
+          S: _0x2c3750.getMilliseconds()
         };
-        "next" === this.method && (this.arg = am);
-        return aC;
-      }
-    };
-    return an;
-  }
-  function l(al, am, an, ao, ap, aq, ar) {
-    try {
-      var as = al[aq](ar),
-        at = as.value;
-    } catch (aw) {
-      return void an(aw);
+      /(y+)/.test(_0x2ef619) && (_0x2ef619 = _0x2ef619.replace(RegExp.$1, (_0x2c3750.getFullYear() + "").substr(4 - RegExp.$1.length)));
+      for (let _0x4ccae2 in _0x5cd64f) new RegExp("(" + _0x4ccae2 + ")").test(_0x2ef619) && (_0x2ef619 = _0x2ef619.replace(RegExp.$1, 1 == RegExp.$1.length ? _0x5cd64f[_0x4ccae2] : ("00" + _0x5cd64f[_0x4ccae2]).substr(("" + _0x5cd64f[_0x4ccae2]).length)));
+      return _0x2ef619;
     }
-    as.done ? am(at) : Promise.resolve(at).then(ao, ap);
-  }
-  function m(al) {
-    return function () {
-      var ao = this,
-        ap = arguments;
-      return new Promise(function (aq, ar) {
-        var at = al.apply(ao, ap);
-        function au(aw) {
-          l(at, aq, ar, au, av, "next", aw);
+    async showmsg() {
+      if (!this.notifyStr) {
+        return;
+      }
+      let _0x69a576 = this.name + " 运行通知\n\n" + this.notifyStr;
+      if (_0x8716db.isNode()) {
+        var _0x4ded0f = require("./sendNotify");
+        console.log("\n============== 推送 ==============");
+        await _0x4ded0f.sendNotify(this.name, _0x69a576);
+      } else {
+        this.msg(_0x69a576);
+      }
+    }
+    logAndNotify(_0x5d20e5) {
+      console.log(_0x5d20e5);
+      this.notifyStr += _0x5d20e5;
+      this.notifyStr += "\n";
+    }
+    logAndNotifyWithTime(_0x13c259) {
+      let _0x5d180a = "[" + this.time("hh:mm:ss.S") + "]" + _0x13c259;
+      console.log(_0x5d180a);
+      this.notifyStr += _0x5d180a;
+      this.notifyStr += "\n";
+    }
+    logWithTime(_0xe9e4ad) {
+      console.log("[" + this.time("hh:mm:ss.S") + "]" + _0xe9e4ad);
+    }
+    msg(_0x281b91 = t, _0x2a5e45 = "", _0x441be7 = "", _0xd75caf) {
+      const _0x3c126f = _0xf16ff0 => {
+        if (!_0xf16ff0) {
+          return _0xf16ff0;
         }
-        function av(aw) {
-          l(at, aq, ar, au, av, "throw", aw);
+        if ("string" == typeof _0xf16ff0) {
+          return this.isLoon() ? _0xf16ff0 : this.isQuanX() ? {
+            "open-url": _0xf16ff0
+          } : this.isSurge() ? {
+            url: _0xf16ff0
+          } : void 0;
         }
-        au(void 0);
-      });
-    };
-  }
-  var n = ($.isNode() ? process.env.YueCheng : $.getdata("YueCheng")) || "",
-    o = ($.isNode() ? process.env.OCR_SERVER : $.getdata("OCR_SERVER")) || "https://ddddocr.xzxxn7.live";
-  window = {};
-  var p = void 0,
-    q = "",
-    r = "",
-    s = "",
-    t = "31",
-    u = "",
-    v = "48",
-    w = "FR*r!isE5W",
-    x = "",
-    y = "",
-    z = "",
-    A = "",
-    B = "",
-    C = "",
-    D = "",
-    E = "K8tbWP2J0x3uCITGYEhL",
-    F = "35c782a2",
-    G = "",
-    H = "",
-    I = "",
-    J = "";
-  function K() {
-    return L.apply(this, arguments);
-  }
-  function L() {
-    L = m(k().mark(function an() {
-      var ap, aq, ar, as, at, au, av, aw, ax, ay, az, aA, aB, aC, aD, aE, aF, aG, aH, aI, aJ, aK, aL, aM, aN, aO, aP, aQ, aR, aS, aT, aU, aV, aW, aX, aY, aZ, b0, b1, b2, b3, b4, b5, b6, b7, b8, b9, ba, bb, bc, bd, be, bf, bg, bh, bi, bj, bk, bl, bm, bn, bo, bp, bq, br, bs, bt, bu, bv, bw, bx, by, bz, bA;
-      return k().wrap(function bB(bC) {
-        for (;;) {
-          switch (bC.prev = bC.next) {
-            case 0:
-              if (console.log("作者：@xzxxn777\n频道：https://t.me/xzxxn777\n群组：https://t.me/xzxxn7777\n自用机场推荐：https://xn--diqv0fut7b.com\n"), n) {
-                bC.next = 6;
-                break;
-              }
-              console.log("先去boxjs填写账号密码");
-              bC.next = 5;
-              return aj("先去boxjs填写账号密码");
-            case 5:
-              return bC.abrupt("return");
-            case 6:
-              bC.next = 8;
-              return ah();
-            case 8:
-              p = bC.sent;
-              ap = n.split(" ");
-              aq = c(ap);
-              bC.prev = 11;
-              aq.s();
-            case 13:
-              if ((ar = aq.n()).done) {
-                bC.next = 293;
-                break;
-              }
-              as = ar.value;
-              console.log("随机生成UA");
-              at = af();
-              B = at.ua;
-              C = at.commonUa;
-              D = at.uuid;
-              console.log(B);
-              console.log(C);
-              x = as.split("&")[0];
-              y = as.split("&")[1];
-              z = as.split("&")[2];
-              A = as.split("&")[3] || x;
-              console.log("用户：".concat(x, "开始任务"));
-              console.log("获取sessionId");
-              bC.next = 30;
-              return S("/api/account/init");
-            case 30:
-              au = bC.sent;
-              s = au.data.session.id;
-              console.log(s);
-              console.log("获取signature_key");
-              bC.next = 36;
-              return M("/web/init?client_id=".concat(v));
-            case 36:
-              av = bC.sent;
-              q = av.data.client.signature_key;
-              console.log(q);
-              console.log("获取code");
-              bC.next = 42;
-              return O("/web/oauth/credential_auth");
-            case 42:
-              if (aw = bC.sent, aw.data) {
-                bC.next = 46;
-                break;
-              }
-              console.log(aw.message);
-              return bC.abrupt("continue", 291);
-            case 46:
-              ax = aw.data.authorization_code.code;
-              console.log(ax);
-              console.log("登录");
-              bC.next = 51;
-              return S("/api/zbtxz/login", "check_token=&code=".concat(ax, "&token=&type=-1&union_id="));
-            case 51:
-              ay = bC.sent;
-              console.log("登录成功");
-              u = ay.data.session.account_id;
-              s = ay.data.session.id;
-              console.log("————————————");
-              console.log("阅读抽奖");
-              console.log("获取id");
-              bC.next = 60;
-              return Q("/api/minus1floor/config");
-            case 60:
-              for (az = bC.sent, aA = az.data.article_list[2].column_news_list[2].url, aB = aA.split("?")[1], aC = {}, aD = aB.split("&"), aE = 0, aF = aD.length; aE < aF; aE++) {
-                aG = aD[aE].split("=");
-                aC[aG[0]] = aG[1];
-              }
-              var bE = {};
-              bE.debug = 0;
-              bE.userId = "";
-              aH = aC.id;
-              console.log(aH);
-              console.log("获取key和token");
-              bC.next = 71;
-              return U("/api/member/login", bE);
-            case 71:
-              aI = bC.sent;
-              F = aI.data.key;
-              G = "Bearer " + aI.data.token;
-              console.log(F);
-              console.log(G);
-              console.log("获取抽奖id");
-              bC.next = 79;
-              return W("/api/study/detail?id=".concat(aH), {
-                id: aH
-              });
-            case 79:
-              aJ = bC.sent;
-              aK = aJ.data.lottery.lottery_id;
-              console.log(aK);
-              console.log("开始阅读");
-              aL = c(aJ.data.levels);
-              bC.prev = 84;
-              aL.s();
-            case 86:
-              if ((aM = aL.n()).done) {
-                bC.next = 124;
-                break;
-              }
-              aN = aM.value;
-              bC.next = 90;
-              return W("/api/study/level?id=".concat(aN.id), {
-                id: aN.id
-              });
-            case 90:
-              if (aO = bC.sent, console.log(aO.data.level.name), aO.data.level.task_num != aO.data.completedTasks.length) {
-                bC.next = 95;
-                break;
-              }
-              console.log("已完成");
-              return bC.abrupt("continue", 122);
-            case 95:
-              aP = c(aO.data.tasks);
-              bC.prev = 96;
-              aP.s();
-            case 98:
-              if ((aQ = aP.n()).done) {
-                bC.next = 114;
-                break;
-              }
-              aR = aQ.value;
-              bC.next = 102;
-              return Q("/api/article/detail?id=".concat(aR.content_id));
-            case 102:
-              aS = bC.sent;
-              console.log("文章：".concat(aS.data.article.list_title));
-              bC.next = 106;
-              return Q("/api/article/read_time?channel_article_id=".concat(aR.content_id, "&read_time=5938"));
-            case 106:
-              var bF = {};
-              bF.id = aR.id;
-              aT = bC.sent;
-              console.log("阅读：".concat(aT.message));
-              bC.next = 110;
-              return U("/api/study/task/complete", bF);
-            case 110:
-              aU = bC.sent;
-              console.log("完成任务：".concat(aU.message));
-            case 112:
-              bC.next = 98;
-              break;
-            case 114:
-              bC.next = 119;
-              break;
-            case 116:
-              bC.prev = 116;
-              bC.t0 = bC.catch(96);
-              aP.e(bC.t0);
-            case 119:
-              bC.prev = 119;
-              aP.f();
-              return bC.finish(119);
-            case 122:
-              bC.next = 86;
-              break;
-            case 124:
-              bC.next = 129;
-              break;
-            case 126:
-              bC.prev = 126;
-              bC.t1 = bC.catch(84);
-              aL.e(bC.t1);
-            case 129:
-              bC.prev = 129;
-              aL.f();
-              return bC.finish(129);
-            case 132:
-              bC.next = 134;
-              return U("/api/lotterybigwheel/_ac_lottery_count", {
-                id: aK,
-                module: "study"
-              });
-            case 134:
-              aV = bC.sent;
-              console.log("拥有".concat(aV.data.count, "次抽奖"));
-              aW = 0;
-            case 137:
-              if (!(aW < aV.data.count)) {
-                bC.next = 178;
-                break;
-              }
-              bC.next = 140;
-              return U("/api/lotterybigwheel/_ac_lottery", {
-                id: aK,
-                app_id: E,
-                module: "study",
-                optionHash: ""
-              });
-            case 140:
-              if (aX = bC.sent, 10000 != aX.code) {
-                bC.next = 174;
-                break;
-              }
-              var bG = {};
-              bG.activity_id = aK;
-              bG.module = "bigWheel";
-              console.log(aX.message);
-              bC.next = 145;
-              return U("/api/captcha/get", bG);
-            case 145:
-              aY = bC.sent;
-              aZ = aY.data.jigsawImageUrl;
-              b0 = aY.data.originalImageUrl;
-              console.log("滑块：".concat(aZ));
-              console.log("背景：".concat(b0));
-              b1 = aY.data.token;
-              b2 = aY.data.secretKey;
-              console.log("秘钥：".concat(b2));
-              bC.next = 155;
-              return a6({
-                slidingImage: aZ,
-                backImage: b0
-              });
-            case 155:
-              if (b3 = bC.sent, b3) {
-                bC.next = 161;
-                break;
-              }
-              console.log("ddddocr服务异常");
-              bC.next = 160;
-              return aj("ddddocr服务异常");
-            case 160:
-              return bC.abrupt("continue", 175);
-            case 161:
-              console.log(b3);
-              b4 = a9(JSON.stringify({
-                x: b3.result,
-                y: 5
-              }), b2);
-              bC.next = 165;
-              return U("/api/captcha/check", {
-                activity_id: aK,
-                module: "bigWheel",
-                cap_token: b1,
-                point: b4
-              });
-            case 165:
-              if (b5 = bC.sent, console.log("验证滑块：" + b5.message), "操作成功" != b5.message) {
-                bC.next = 172;
-                break;
-              }
-              var bH = {};
-              bH.id = aK;
-              bH.app_id = E;
-              bH.module = "study";
-              bH.optionHash = "";
-              bC.next = 170;
-              return U("/api/lotterybigwheel/_ac_lottery", bH);
-            case 170:
-              aX = bC.sent;
-              aX.data.code ? (console.log("抽奖获得：".concat(aX.data.title)), r += "用户：".concat(x, " 抽奖获得：").concat(aX.data.title, "\n")) : (console.log("抽奖获得：".concat(aX.data.tip_title)), r += "用户：".concat(x, " 抽奖获得：").concat(aX.data.tip_title, "\n"));
-            case 172:
-              bC.next = 175;
-              break;
-            case 174:
-              aX.data.code ? (console.log("抽奖获得：".concat(aX.data.title)), r += "用户：".concat(x, " 抽奖获得：").concat(aX.data.title, "\n")) : (console.log("抽奖获得：".concat(aX.data.tip_title)), r += "用户：".concat(x, " 抽奖获得：").concat(aX.data.tip_title, "\n"));
-            case 175:
-              aW++;
-              bC.next = 137;
-              break;
-            case 178:
-              for (console.log("————————————"), console.log("动动手指赢红包"), aA = az.data.article_list[2].column_news_list[1].url, aB = aA.split("?")[1], aC = {}, aD = aB.split("&"), b6 = 0, b7 = aD.length; b6 < b7; b6++) {
-                b8 = aD[b6].split("=");
-                aC[b8[0]] = b8[1];
-              }
-              bC.next = 187;
-              return Q("/api/article/detail?id=".concat(aC.id));
-            case 187:
-              b9 = bC.sent;
-              bC.next = 190;
-              return Q("/api/article/subject_group_list?group_id=".concat(b9.data.article.subject_groups[0].group_id));
-            case 190:
-              ba = bC.sent;
-              bb = c(ba.data.article_list);
-              bC.prev = 192;
-              bb.s();
-            case 194:
-              if ((bc = bb.n()).done) {
-                bC.next = 283;
-                break;
-              }
-              if (bd = bc.value, ag(bd.published_at)) {
-                bC.next = 198;
-                break;
-              }
-              return bC.abrupt("break", 283);
-            case 198:
-              console.log("文章：".concat(bd.list_title));
-              bC.next = 201;
-              return Q("/api/article/detail?id=".concat(bd.id));
-            case 201:
-              if (be = bC.sent, bf = be.data.article.content, bg = bf.match(/id%3D(\d+)%26dbnewopen/), !bg) {
-                bC.next = 209;
-                break;
-              }
-              I = bg[1];
-              console.log("activityId：".concat(I));
-              bC.next = 211;
-              break;
-            case 209:
-              console.log("未匹配到activityId");
-              return bC.abrupt("continue", 281);
-            case 211:
-              console.log("阅读登录");
-              bC.next = 214;
-              return Y("/customActivity/zjtm/autoLogin?_=".concat(Date.now(), "&sessionId=").concat(s, "&accountId=").concat(u, "&redirectUrl=https://95337.activity-42.m.duiba.com.cn/hdtool/index?id=").concat(I, "&dbnewopen"));
-            case 214:
-              bh = bC.sent;
-              bi = bh.data;
-              H = "";
-              bC.next = 219;
-              return a2(bi);
-            case 219:
-              H = bC.sent;
-              console.log("获取抽奖key");
-              bC.next = 223;
-              return a4("https://95337.activity-42.m.duiba.com.cn/hdtool/index?id=".concat(I, "&dbnewopen&from=login&spm=95337.1.1.1"));
-            case 223:
-              bj = bC.sent;
-              bC.next = 226;
-              return a0("/hdtool/ctoken/getTokenNew", "timestamp=".concat(Date.now(), "&activityId=").concat(I, "&activityType=hdtool&consumerId=").concat(J));
-            case 226:
-              bk = bC.sent;
-              eval(bk.token);
-              bl = window[bj];
-              bC.next = 231;
-              return a0("/hdtool/dy/doJoin?dpm=95337.3.1.0&activityId=".concat(I, "&_=").concat(Date.now()), "actId=".concat(I, "&oaId=").concat(I, "&activityType=hdtool&consumerId=").concat(J, "&token=").concat(bl));
-            case 231:
-              if (bm = bC.sent, !bm.success) {
-                bC.next = 278;
-                break;
-              }
-              if (bm.orderId) {
-                bC.next = 236;
-                break;
-              }
-              console.log(bm.message);
-              return bC.abrupt("continue", 281);
-            case 236:
-              bn = bm.orderId;
-              bo = 0;
-            case 238:
-              if (0 != bo) {
-                bC.next = 276;
-                break;
-              }
-              bC.next = 241;
-              return a0("/hdtool/getOrderStatus?_=".concat(Date.now()), "orderId=".concat(bn, "&adslotId="));
-            case 241:
-              if (bp = bC.sent, bo = bp.result, 0 != bo) {
-                bC.next = 247;
-                break;
-              }
-              console.log(bp.message);
-              bC.next = 274;
-              break;
-            case 247:
-              if ("thanks" == bp.lottery.type && console.log("谢谢参与"), "alipay" != bp.lottery.type) {
-                bC.next = 274;
-                break;
-              }
-              for (console.log("抽奖获得支付宝红包：".concat(bp.lottery.title)), r += "用户：".concat(x, " 抽奖获得支付宝红包：").concat(bp.lottery.title, "\n"), bq = bp.lottery.link, br = bq.split("?")[1], bs = {}, bt = br.split("&"), bu = 0, bv = bt.length; bu < bv; bu++) {
-                bw = bt[bu].split("=");
-                bs[bw[0]] = bw[1];
-              }
-              if (bx = bs.recordId, !z || !A) {
-                bC.next = 273;
-                break;
-              }
-              console.log("获取兑换key");
-              bC.next = 261;
-              return a4("https://95337.activity-42.m.duiba.com.cn/activity/takePrizeNew?recordId=".concat(bx, "&dbnewopen"));
-            case 261:
-              bj = bC.sent;
-              bC.next = 264;
-              return a0("/ctoken/getToken.do");
-            case 264:
-              by = bC.sent;
-              eval(by.token);
-              bz = window[bj];
-              bC.next = 269;
-              return a0("/activity/doTakePrize", "alipay=".concat(A, "&realname=").concat(encodeURI(z), "&recordId=").concat(bx, "&token=").concat(bz));
-            case 269:
-              bA = bC.sent;
-              console.log(bA.message);
-              bC.next = 274;
-              break;
-            case 273:
-              console.log("请设置支付宝姓名和账号");
-            case 274:
-              bC.next = 238;
-              break;
-            case 276:
-              bC.next = 279;
-              break;
-            case 278:
-              console.log(bm.message);
-            case 279:
-              bC.next = 281;
-              return $.wait(2000);
-            case 281:
-              bC.next = 194;
-              break;
-            case 283:
-              bC.next = 288;
-              break;
-            case 285:
-              bC.prev = 285;
-              bC.t2 = bC.catch(192);
-              bb.e(bC.t2);
-            case 288:
-              bC.prev = 288;
-              bb.f();
-              return bC.finish(288);
-            case 291:
-              bC.next = 13;
-              break;
-            case 293:
-              bC.next = 298;
-              break;
-            case 295:
-              bC.prev = 295;
-              bC.t3 = bC.catch(11);
-              aq.e(bC.t3);
-            case 298:
-              bC.prev = 298;
-              aq.f();
-              return bC.finish(298);
-            case 301:
-              if (!r) {
-                bC.next = 304;
-                break;
-              }
-              bC.next = 304;
-              return aj(r);
-            case 304:
-            case "end":
-              return bC.stop();
+        if ("object" == typeof _0xf16ff0) {
+          if (this.isLoon()) {
+            let _0x2fda6e = _0xf16ff0.openUrl || _0xf16ff0.url || _0xf16ff0["open-url"],
+              _0x1bd995 = _0xf16ff0.mediaUrl || _0xf16ff0["media-url"];
+            const _0x5d7302 = {
+              openUrl: _0x2fda6e,
+              mediaUrl: _0x1bd995
+            };
+            return _0x5d7302;
+          }
+          if (this.isQuanX()) {
+            let _0x5464ef = _0xf16ff0["open-url"] || _0xf16ff0.url || _0xf16ff0.openUrl,
+              _0x3b60b5 = _0xf16ff0["media-url"] || _0xf16ff0.mediaUrl;
+            const _0x3f7c94 = {
+              "open-url": _0x5464ef,
+              "media-url": _0x3b60b5
+            };
+            return _0x3f7c94;
+          }
+          if (this.isSurge()) {
+            let _0x4f4b61 = _0xf16ff0.url || _0xf16ff0.openUrl || _0xf16ff0["open-url"];
+            const _0x40f4f2 = {
+              url: _0x4f4b61
+            };
+            return _0x40f4f2;
           }
         }
-      }, an, null, [[11, 295, 298, 301], [84, 126, 129, 132], [96, 116, 119, 122], [192, 285, 288, 291]]);
-    }));
-    return L.apply(this, arguments);
-  }
-  function M(al) {
-    return N.apply(this, arguments);
-  }
-  function N() {
-    N = m(k().mark(function an(ao) {
-      return k().wrap(function (ar) {
-        for (;;) {
-          switch (ar.prev = ar.next) {
-            case 0:
-              return ar.abrupt("return", new Promise(function (at) {
-                var av = {
-                  url: "https://passport.tmuyun.com".concat(ao),
-                  headers: {
-                    Connection: "Keep-Alive",
-                    "Cache-Control": "no-cache",
-                    "X-REQUEST-ID": ad(),
-                    "Accept-Encoding": "gzip",
-                    "user-agent": B
-                  }
-                };
-                $.get(av, function () {
-                  var ay = m(k().mark(function aA(aB, aC, aD) {
-                    return k().wrap(function (aF) {
-                      for (;;) {
-                        switch (aF.prev = aF.next) {
-                          case 0:
-                            try {
-                              aB ? (console.log("".concat(JSON.stringify(aB))), console.log("".concat($.name, " API请求失败，请检查网路重试"))) : at(JSON.parse(aD));
-                            } catch (aJ) {
-                              $.logErr(aJ, aC);
-                            } finally {
-                              at();
-                            }
-                          case 1:
-                          case "end":
-                            return aF.stop();
-                        }
-                      }
-                    }, aA);
-                  }));
-                  return function (aB, aC, aD) {
-                    return ay.apply(this, arguments);
-                  };
-                }());
-              }));
-            case 1:
-            case "end":
-              return ar.stop();
-          }
-        }
-      }, an);
-    }));
-    return N.apply(this, arguments);
-  }
-  function O(al) {
-    return P.apply(this, arguments);
-  }
-  function P() {
-    P = m(k().mark(function am(an) {
-      var ap;
-      return k().wrap(function (aq) {
-        for (;;) {
-          switch (aq.prev = aq.next) {
-            case 0:
-              ap = aa();
-              return aq.abrupt("return", new Promise(function (ar) {
-                var at = {
-                  url: "https://passport.tmuyun.com".concat(an),
-                  headers: {
-                    Connection: "Keep-Alive",
-                    "X-REQUEST-ID": ap.uuid,
-                    "X-SIGNATURE": ap.signature,
-                    "Cache-Control": "no-cache",
-                    "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
-                    "Accept-Encoding": "gzip",
-                    "user-agent": B
-                  },
-                  body: ap.body
-                };
-                $.post(at, function () {
-                  var au = m(k().mark(function av(aw, ax, ay) {
-                    return k().wrap(function (aA) {
-                      for (;;) {
-                        switch (aA.prev = aA.next) {
-                          case 0:
-                            try {
-                              aw ? (console.log("".concat(JSON.stringify(aw))), console.log("".concat($.name, " API请求失败，请检查网路重试"))) : ar(JSON.parse(ay));
-                            } catch (aD) {
-                              $.logErr(aD, ax);
-                            } finally {
-                              ar();
-                            }
-                          case 1:
-                          case "end":
-                            return aA.stop();
-                        }
-                      }
-                    }, av);
-                  }));
-                  return function (aw, ax, ay) {
-                    return au.apply(this, arguments);
-                  };
-                }());
-              }));
-            case 2:
-            case "end":
-              return aq.stop();
-          }
-        }
-      }, am);
-    }));
-    return P.apply(this, arguments);
-  }
-  function Q(al) {
-    return R.apply(this, arguments);
-  }
-  function R() {
-    R = m(k().mark(function am(an) {
-      var ao;
-      return k().wrap(function (ap) {
-        for (;;) {
-          switch (ap.prev = ap.next) {
-            case 0:
-              ao = ac(an);
-              return ap.abrupt("return", new Promise(function (ar) {
-                var at = {
-                  Connection: "Keep-Alive",
-                  "X-TIMESTAMP": ao.time,
-                  "X-SESSION-ID": s,
-                  "X-REQUEST-ID": ao.uuid,
-                  "X-SIGNATURE": ao.signature,
-                  "X-TENANT-ID": t,
-                  "X-ACCOUNT-ID": u,
-                  "Cache-Control": "no-cache",
-                  "Accept-Encoding": "gzip",
-                  "user-agent": C
-                };
-                var au = {
-                  url: "https://vapp.tmuyun.com".concat(an),
-                  headers: at
-                };
-                $.get(au, function () {
-                  var ax = m(k().mark(function ay(az, aA, aB) {
-                    return k().wrap(function (aC) {
-                      for (;;) {
-                        switch (aC.prev = aC.next) {
-                          case 0:
-                            if (aC.prev = 0, !az) {
-                              aC.next = 6;
-                              break;
-                            }
-                            console.log("".concat(JSON.stringify(az)));
-                            console.log("".concat($.name, " API请求失败，请检查网路重试"));
-                            aC.next = 9;
-                            break;
-                          case 6:
-                            aC.next = 8;
-                            return $.wait(2000);
-                          case 8:
-                            ar(JSON.parse(aB));
-                          case 9:
-                            aC.next = 14;
-                            break;
-                          case 11:
-                            aC.prev = 11;
-                            aC.t0 = aC.catch(0);
-                            $.logErr(aC.t0, aA);
-                          case 14:
-                            aC.prev = 14;
-                            ar();
-                            return aC.finish(14);
-                          case 17:
-                          case "end":
-                            return aC.stop();
-                        }
-                      }
-                    }, ay, null, [[0, 11, 14, 17]]);
-                  }));
-                  return function (az, aA, aB) {
-                    return ax.apply(this, arguments);
-                  };
-                }());
-              }));
-            case 2:
-            case "end":
-              return ap.stop();
-          }
-        }
-      }, am);
-    }));
-    return R.apply(this, arguments);
-  }
-  function S(al, am) {
-    return T.apply(this, arguments);
-  }
-  function T() {
-    T = m(k().mark(function am(an, ao) {
-      var aq;
-      return k().wrap(function (ar) {
-        for (;;) {
-          switch (ar.prev = ar.next) {
-            case 0:
-              aq = ac(an);
-              return ar.abrupt("return", new Promise(function (as) {
-                var au = {
-                  Connection: "Keep-Alive",
-                  "X-TIMESTAMP": aq.time,
-                  "X-SESSION-ID": s,
-                  "X-REQUEST-ID": aq.uuid,
-                  "X-SIGNATURE": aq.signature,
-                  "X-TENANT-ID": t,
-                  "X-ACCOUNT-ID": u,
-                  "Cache-Control": "no-cache",
-                  "Accept-Encoding": "gzip",
-                  "user-agent": C
-                };
-                var av = {
-                  url: "https://vapp.tmuyun.com".concat(an),
-                  headers: au,
-                  body: ao
-                };
-                $.post(av, function () {
-                  var aw = m(k().mark(function ax(ay, az, aA) {
-                    return k().wrap(function (aC) {
-                      for (;;) {
-                        switch (aC.prev = aC.next) {
-                          case 0:
-                            if (aC.prev = 0, !ay) {
-                              aC.next = 6;
-                              break;
-                            }
-                            console.log("".concat(JSON.stringify(ay)));
-                            console.log("".concat($.name, " API请求失败，请检查网路重试"));
-                            aC.next = 9;
-                            break;
-                          case 6:
-                            aC.next = 8;
-                            return $.wait(2000);
-                          case 8:
-                            as(JSON.parse(aA));
-                          case 9:
-                            aC.next = 14;
-                            break;
-                          case 11:
-                            aC.prev = 11;
-                            aC.t0 = aC.catch(0);
-                            $.logErr(aC.t0, az);
-                          case 14:
-                            aC.prev = 14;
-                            as();
-                            return aC.finish(14);
-                          case 17:
-                          case "end":
-                            return aC.stop();
-                        }
-                      }
-                    }, ax, null, [[0, 11, 14, 17]]);
-                  }));
-                  return function (ay, az, aA) {
-                    return aw.apply(this, arguments);
-                  };
-                }());
-              }));
-            case 2:
-            case "end":
-              return ar.stop();
-          }
-        }
-      }, am);
-    }));
-    return T.apply(this, arguments);
-  }
-  function U(al, am) {
-    return V.apply(this, arguments);
-  }
-  function V() {
-    V = m(k().mark(function am(an, ao) {
-      var ap;
-      return k().wrap(function (aq) {
-        for (;;) {
-          switch (aq.prev = aq.next) {
-            case 0:
-              ap = ab(ao);
-              return aq.abrupt("return", new Promise(function (as) {
-                var at = {
-                  url: "https://op-api.cloud.jinhua.com.cn".concat(an),
-                  headers: {
-                    "access-type": "app",
-                    "access-module": "study",
-                    "access-device-id": D,
-                    "access-auth-id": u,
-                    "access-api-signature": ap.signature,
-                    "access-nonce-str": ap.uuid,
-                    authorization: G,
-                    "access-app-id": E,
-                    "access-timestamp": ap.time,
-                    "access-api-token": s,
-                    accept: "application/json, text/plain, */*",
-                    "user-agent": "Mozilla/5.0 (Linux; Android 11; 21091116AC Build/RP1A.200720.011; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/94.0.4606.85 Mobile Safari/537.36;xsb_yuecheng;xsb_yuecheng;1.7.0;native_app;6.12.0",
-                    "content-type": "application/json; charset=UTF-8",
-                    origin: "https://op-h5.cloud.jinhua.com.cn",
-                    "x-requested-with": "com.zjonline.zhuji",
-                    "sec-fetch-site": "same-site",
-                    "sec-fetch-mode": "cors",
-                    "sec-fetch-dest": "empty",
-                    referer: "https://op-h5.cloud.jinhua.com.cn/",
-                    "accept-encoding": "gzip, deflate",
-                    "accept-language": "zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7"
-                  },
-                  body: JSON.stringify(ao)
-                };
-                $.post(at, function () {
-                  var av = m(k().mark(function aw(ax, ay, az) {
-                    return k().wrap(function (aA) {
-                      for (;;) {
-                        switch (aA.prev = aA.next) {
-                          case 0:
-                            if (aA.prev = 0, !ax) {
-                              aA.next = 6;
-                              break;
-                            }
-                            console.log("".concat(JSON.stringify(ax)));
-                            console.log("".concat($.name, " API请求失败，请检查网路重试"));
-                            aA.next = 9;
-                            break;
-                          case 6:
-                            aA.next = 8;
-                            return $.wait(2000);
-                          case 8:
-                            as(JSON.parse(az));
-                          case 9:
-                            aA.next = 14;
-                            break;
-                          case 11:
-                            aA.prev = 11;
-                            aA.t0 = aA.catch(0);
-                            $.logErr(aA.t0, ay);
-                          case 14:
-                            aA.prev = 14;
-                            as();
-                            return aA.finish(14);
-                          case 17:
-                          case "end":
-                            return aA.stop();
-                        }
-                      }
-                    }, aw, null, [[0, 11, 14, 17]]);
-                  }));
-                  return function (ax, ay, az) {
-                    return av.apply(this, arguments);
-                  };
-                }());
-              }));
-            case 2:
-            case "end":
-              return aq.stop();
-          }
-        }
-      }, am);
-    }));
-    return V.apply(this, arguments);
-  }
-  function W(al, am) {
-    return X.apply(this, arguments);
-  }
-  function X() {
-    X = m(k().mark(function am(an, ao) {
-      var aq;
-      return k().wrap(function (ar) {
-        for (;;) {
-          switch (ar.prev = ar.next) {
-            case 0:
-              aq = ab(ao);
-              return ar.abrupt("return", new Promise(function (as) {
-                var au = {
-                  "access-type": "app",
-                  "access-module": "study",
-                  "access-device-id": D,
-                  "access-auth-id": u,
-                  "access-api-signature": aq.signature,
-                  "access-nonce-str": aq.uuid,
-                  authorization: G,
-                  "access-app-id": E,
-                  "access-timestamp": aq.time,
-                  "access-api-token": s,
-                  accept: "application/json, text/plain, */*",
-                  "user-agent": "Mozilla/5.0 (Linux; Android 11; 21091116AC Build/RP1A.200720.011; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/94.0.4606.85 Mobile Safari/537.36;xsb_yuecheng;xsb_yuecheng;1.7.0;native_app;6.12.0",
-                  origin: "https://op-h5.cloud.jinhua.com.cn",
-                  "x-requested-with": "com.zjonline.zhuji",
-                  "sec-fetch-site": "same-site",
-                  "sec-fetch-mode": "cors",
-                  "sec-fetch-dest": "empty",
-                  referer: "https://op-h5.cloud.jinhua.com.cn/",
-                  "accept-encoding": "gzip, deflate",
-                  "accept-language": "zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7"
-                };
-                var av = {
-                  url: "https://op-api.cloud.jinhua.com.cn".concat(an),
-                  headers: au
-                };
-                $.get(av, function () {
-                  var ax = m(k().mark(function ay(az, aA, aB) {
-                    return k().wrap(function (aD) {
-                      for (;;) {
-                        switch (aD.prev = aD.next) {
-                          case 0:
-                            if (aD.prev = 0, !az) {
-                              aD.next = 6;
-                              break;
-                            }
-                            console.log("".concat(JSON.stringify(az)));
-                            console.log("".concat($.name, " API请求失败，请检查网路重试"));
-                            aD.next = 9;
-                            break;
-                          case 6:
-                            aD.next = 8;
-                            return $.wait(2000);
-                          case 8:
-                            as(JSON.parse(aB));
-                          case 9:
-                            aD.next = 14;
-                            break;
-                          case 11:
-                            aD.prev = 11;
-                            aD.t0 = aD.catch(0);
-                            $.logErr(aD.t0, aA);
-                          case 14:
-                            aD.prev = 14;
-                            as();
-                            return aD.finish(14);
-                          case 17:
-                          case "end":
-                            return aD.stop();
-                        }
-                      }
-                    }, ay, null, [[0, 11, 14, 17]]);
-                  }));
-                  return function (az, aA, aB) {
-                    return ax.apply(this, arguments);
-                  };
-                }());
-              }));
-            case 2:
-            case "end":
-              return ar.stop();
-          }
-        }
-      }, am);
-    }));
-    return X.apply(this, arguments);
-  }
-  function Y(al) {
-    return Z.apply(this, arguments);
-  }
-  function Z() {
-    Z = m(k().mark(function am(an) {
-      return k().wrap(function (ao) {
-        for (;;) {
-          switch (ao.prev = ao.next) {
-            case 0:
-              return ao.abrupt("return", new Promise(function (aq) {
-                var as = {
-                  url: "https://95337.activity-42.m.duiba.com.cn".concat(an),
-                  headers: {
-                    accept: "*/*",
-                    "user-agent": "Mozilla/5.0 (Linux; Android 11; 21091116AC Build/RP1A.200720.011; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/94.0.4606.85 Mobile Safari/537.36;xsb_yuecheng;xsb_yuecheng;1.7.0;native_app;6.12.0",
-                    "x-requested-with": "com.zjonline.yuecheng",
-                    "sec-fetch-site": "same-origin",
-                    "sec-fetch-mode": "cors",
-                    "sec-fetch-dest": "empty",
-                    "accept-encoding": "gzip, deflate",
-                    "accept-language": "zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7"
-                  }
-                };
-                $.get(as, function () {
-                  var au = m(k().mark(function av(aw, ax, ay) {
-                    return k().wrap(function (aA) {
-                      for (;;) {
-                        switch (aA.prev = aA.next) {
-                          case 0:
-                            if (aA.prev = 0, !aw) {
-                              aA.next = 6;
-                              break;
-                            }
-                            console.log("".concat(JSON.stringify(aw)));
-                            console.log("".concat($.name, " API请求失败，请检查网路重试"));
-                            aA.next = 9;
-                            break;
-                          case 6:
-                            aA.next = 8;
-                            return $.wait(2000);
-                          case 8:
-                            aq(JSON.parse(ay));
-                          case 9:
-                            aA.next = 14;
-                            break;
-                          case 11:
-                            aA.prev = 11;
-                            aA.t0 = aA.catch(0);
-                            $.logErr(aA.t0, ax);
-                          case 14:
-                            aA.prev = 14;
-                            aq();
-                            return aA.finish(14);
-                          case 17:
-                          case "end":
-                            return aA.stop();
-                        }
-                      }
-                    }, av, null, [[0, 11, 14, 17]]);
-                  }));
-                  return function (aw, ax, ay) {
-                    return au.apply(this, arguments);
-                  };
-                }());
-              }));
-            case 1:
-            case "end":
-              return ao.stop();
-          }
-        }
-      }, am);
-    }));
-    return Z.apply(this, arguments);
-  }
-  function a0(al, am) {
-    return a1.apply(this, arguments);
-  }
-  function a1() {
-    a1 = m(k().mark(function an(ao, ap) {
-      return k().wrap(function (aq) {
-        for (;;) {
-          switch (aq.prev = aq.next) {
-            case 0:
-              return aq.abrupt("return", new Promise(function (at) {
-                var av = {
-                  url: "https://95337.activity-42.m.duiba.com.cn".concat(ao),
-                  headers: {
-                    accept: "application/json",
-                    "user-agent": "Mozilla/5.0 (Linux; Android 11; 21091116AC Build/RP1A.200720.011; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/94.0.4606.85 Mobile Safari/537.36;xsb_yuecheng;xsb_yuecheng;1.7.0;native_app;6.12.0",
-                    "x-requested-with": "XMLHttpRequest",
-                    "content-type": "application/x-www-form-urlencoded",
-                    origin: "https://95337.activity-42.m.duiba.com.cn",
-                    cookie: H,
-                    "sec-fetch-site": "same-origin",
-                    "sec-fetch-mode": "cors",
-                    "sec-fetch-dest": "empty",
-                    referer: "https://95337.activity-42.m.duiba.com.cn/hdtool/index?id=".concat(I, "&dbnewopen&from=login&spm=95337.1.1.1"),
-                    "accept-encoding": "gzip, deflate",
-                    "accept-language": "zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7"
-                  },
-                  body: ap
-                };
-                $.post(av, function () {
-                  var ax = m(k().mark(function ay(az, aA, aB) {
-                    return k().wrap(function (aC) {
-                      for (;;) {
-                        switch (aC.prev = aC.next) {
-                          case 0:
-                            if (aC.prev = 0, !az) {
-                              aC.next = 6;
-                              break;
-                            }
-                            console.log("".concat(JSON.stringify(az)));
-                            console.log("".concat($.name, " API请求失败，请检查网路重试"));
-                            aC.next = 9;
-                            break;
-                          case 6:
-                            aC.next = 8;
-                            return $.wait(2000);
-                          case 8:
-                            at(JSON.parse(aB));
-                          case 9:
-                            aC.next = 14;
-                            break;
-                          case 11:
-                            aC.prev = 11;
-                            aC.t0 = aC.catch(0);
-                            $.logErr(aC.t0, aA);
-                          case 14:
-                            aC.prev = 14;
-                            at();
-                            return aC.finish(14);
-                          case 17:
-                          case "end":
-                            return aC.stop();
-                        }
-                      }
-                    }, ay, null, [[0, 11, 14, 17]]);
-                  }));
-                  return function (az, aA, aB) {
-                    return ax.apply(this, arguments);
-                  };
-                }());
-              }));
-            case 1:
-            case "end":
-              return aq.stop();
-          }
-        }
-      }, an);
-    }));
-    return a1.apply(this, arguments);
-  }
-  function a2(al) {
-    return a3.apply(this, arguments);
-  }
-  function a3() {
-    a3 = m(k().mark(function al(am) {
-      return k().wrap(function (ap) {
-        for (;;) {
-          switch (ap.prev = ap.next) {
-            case 0:
-              return ap.abrupt("return", new Promise(function (aq) {
-                var as = {
-                  accept: "*/*",
-                  "user-agent": "Mozilla/5.0 (Linux; Android 11; 21091116AC Build/RP1A.200720.011; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/94.0.4606.85 Mobile Safari/537.36;xsb_yuecheng;xsb_yuecheng;1.7.0;native_app;6.12.0",
-                  "x-requested-with": "com.zjonline.yuecheng",
-                  "sec-fetch-site": "same-origin",
-                  "sec-fetch-mode": "cors",
-                  "sec-fetch-dest": "empty",
-                  "accept-encoding": "gzip, deflate",
-                  "accept-language": "zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7"
-                };
-                var at = {
-                  url: "https:".concat(am),
-                  headers: as,
-                  followRedirect: !1
-                };
-                $.get(at, function () {
-                  var av = m(k().mark(function aw(ax, ay, az) {
-                    var aA, aB;
-                    return k().wrap(function (aC) {
-                      for (;;) {
-                        switch (aC.prev = aC.next) {
-                          case 0:
-                            if (aC.prev = 0, !ax) {
-                              aC.next = 6;
-                              break;
-                            }
-                            console.log("".concat(JSON.stringify(ax)));
-                            console.log("".concat($.name, " API请求失败，请检查网路重试"));
-                            aC.next = 10;
-                            break;
-                          case 6:
-                            aC.next = 8;
-                            return $.wait(2000);
-                          case 8:
-                            if ($.isNode()) {
-                              for (aA = ay.headers["set-cookie"] || ay.headers["Set-Cookie"], aB = 0; aB < aA.length; aB++) {
-                                H += aA[aB].split(";")[0] + ";";
-                              }
-                            } else {
-                              H = ay.headers["set-cookie"] || ay.headers["Set-Cookie"];
-                              H = a8(H);
-                            }
-                            aq(H);
-                          case 10:
-                            aC.next = 15;
-                            break;
-                          case 12:
-                            aC.prev = 12;
-                            aC.t0 = aC.catch(0);
-                            $.logErr(aC.t0, ay);
-                          case 15:
-                            aC.prev = 15;
-                            aq();
-                            return aC.finish(15);
-                          case 18:
-                          case "end":
-                            return aC.stop();
-                        }
-                      }
-                    }, aw, null, [[0, 12, 15, 18]]);
-                  }));
-                  return function (ax, ay, az) {
-                    return av.apply(this, arguments);
-                  };
-                }());
-              }));
-            case 1:
-            case "end":
-              return ap.stop();
-          }
-        }
-      }, al);
-    }));
-    return a3.apply(this, arguments);
-  }
-  function a4(al) {
-    return a5.apply(this, arguments);
-  }
-  function a5() {
-    a5 = m(k().mark(function al(am) {
-      return k().wrap(function ao(ap) {
-        for (;;) {
-          switch (ap.prev = ap.next) {
-            case 0:
-              return ap.abrupt("return", new Promise(function (aq) {
-                var as = {
-                  accept: "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
-                  "upgrade-insecure-requests": "1",
-                  "user-agent": "Mozilla/5.0 (Linux; Android 11; 21091116AC Build/RP1A.200720.011; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/94.0.4606.85 Mobile Safari/537.36;xsb_yuecheng;xsb_yuecheng;1.7.0;native_app;6.12.0",
-                  "x-requested-with": "com.zjonline.yuecheng",
-                  "sec-fetch-site": "same-origin",
-                  "sec-fetch-mode": "navigate",
-                  "sec-fetch-user": "?1",
-                  "sec-fetch-dest": "document",
-                  referer: "https://95337.activity-42.m.duiba.com.cn/",
-                  "accept-encoding": "gzip, deflate",
-                  "accept-language": "zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7",
-                  cookie: H
-                };
-                var at = {
-                  url: am,
-                  headers: as
-                };
-                $.get(at, function () {
-                  var aw = m(k().mark(function ax(ay, az, aA) {
-                    var aB, aC, aD, aE;
-                    return k().wrap(function aF(aG) {
-                      for (;;) {
-                        switch (aG.prev = aG.next) {
-                          case 0:
-                            if (aG.prev = 0, !ay) {
-                              aG.next = 6;
-                              break;
-                            }
-                            console.log("".concat(JSON.stringify(ay)));
-                            console.log("".concat($.name, " API请求失败，请检查网路重试"));
-                            aG.next = 18;
-                            break;
-                          case 6:
-                            aG.next = 8;
-                            return $.wait(2000);
-                          case 8:
-                            aB = /<script type\b[^>]*>\s*var([\s\S]*?)<\/script>/.exec(aA)[1];
-                            eval(aB);
-                            aC = /var\s+key\s+=\s+'([^']+)';/.exec(getDuibaToken.toString())[1];
-                            console.log(aC);
-                            console.log("获取consumerId");
-                            aD = /consumerId:'(\d+)'/;
-                            aE = aA.match(aD);
-                            J = aE ? aE[1] : "4135312778";
-                            console.log(J);
-                            aq(aC);
-                          case 18:
-                            aG.next = 23;
-                            break;
-                          case 20:
-                            aG.prev = 20;
-                            aG.t0 = aG.catch(0);
-                            $.logErr(aG.t0, az);
-                          case 23:
-                            aG.prev = 23;
-                            aq();
-                            return aG.finish(23);
-                          case 26:
-                          case "end":
-                            return aG.stop();
-                        }
-                      }
-                    }, ax, null, [[0, 20, 23, 26]]);
-                  }));
-                  return function (ay, az, aA) {
-                    return aw.apply(this, arguments);
-                  };
-                }());
-              }));
-            case 1:
-            case "end":
-              return ap.stop();
-          }
-        }
-      }, al);
-    }));
-    return a5.apply(this, arguments);
-  }
-  function a6(al) {
-    return a7.apply(this, arguments);
-  }
-  function a7() {
-    a7 = m(k().mark(function an(ao) {
-      return k().wrap(function (ar) {
-        for (;;) {
-          switch (ar.prev = ar.next) {
-            case 0:
-              return ar.abrupt("return", new Promise(function (au) {
-                var aw = {
-                  url: "".concat(o, "/capcode"),
-                  headers: {
-                    "Content-Type": "application/json"
-                  },
-                  body: JSON.stringify(ao)
-                };
-                $.post(aw, function (ax, ay, az) {
-                  try {
-                    ax ? (console.log("".concat(JSON.stringify(ax))), console.log("".concat($.name, " API请求失败，请检查网路重试"))) : au(JSON.parse(az));
-                  } catch (aA) {
-                    $.logErr(aA, ay);
-                  } finally {
-                    au();
-                  }
-                });
-              }));
-            case 1:
-            case "end":
-              return ar.stop();
-          }
-        }
-      }, an);
-    }));
-    return a7.apply(this, arguments);
-  }
-  function a8(al) {
-    var am = al.split(", "),
-      an = am.map(function (ao) {
-        var ap = ao.split(";")[0];
-        return ap.trim();
-      });
-    return an.join(";");
-  }
-  function a9(al, am) {
-    CryptoJS = p.createCryptoJS();
-    var an = CryptoJS.enc.Utf8.parse(am),
-      ao = CryptoJS.enc.Utf8.parse(al),
-      ap = CryptoJS.AES.encrypt(ao, an, {
-        mode: CryptoJS.mode.ECB,
-        padding: CryptoJS.pad.Pkcs7
-      });
-    return ap.toString();
-  }
-  function aa() {
-    var al = new (p.loadJSEncrypt())();
-    al.setPublicKey("MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQD6XO7e9YeAOs+cFqwa7ETJ+WXizPqQeXv68i5vqw9pFREsrqiBTRcg7wB0RIp3rJkDpaeVJLsZqYm5TW7FWx/iOiXFc+zCPvaKZric2dXCw27EvlH5rq+zwIPDAJHGAfnn1nmQH7wR3PCatEIb8pz5GFlTHMlluw4ZYmnOwg+thwIDAQAB");
-    y = al.encrypt(y);
-    var am = ad(),
-      an = "client_id=".concat(v, "&password=").concat(y, "&phone_number=").concat(x),
-      ao = "post%%/web/oauth/credential_auth?".concat(an, "%%").concat(am, "%%");
-    an = "client_id=".concat(v, "&password=").concat(encodeURIComponent(y), "&phone_number=").concat(x);
-    CryptoJS = p.createCryptoJS();
-    var ap = CryptoJS.HmacSHA256(ao, q),
-      aq = CryptoJS.enc.Hex.stringify(ap),
-      ar = {
-        uuid: am,
-        signature: aq,
-        body: an
       };
-    return ar;
-  }
-  function ab(al) {
-    var as = ad(),
-      at = Date.now(),
-      au = {
-        app_id: E,
-        device_id: D,
-        nonce_str: as,
-        source_type: "app",
-        timestamp: at,
-        auth_id: u,
-        token: s
-      };
-    Object.entries(al).forEach(function (aw) {
-      var ax = d(aw, 2),
-        ay = ax[0],
-        az = ax[1];
-      au[ay] = az;
-    });
-    var ap = Object.keys(au).sort(),
-      aq = ap.map(function (aw) {
-        return "".concat(aw, "=").concat(au[aw]);
-      }).join("&&");
-    aq = aq + "&&" + F;
-    CryptoJS = p.createCryptoJS();
-    var av = CryptoJS.SHA256(aq).toString();
-    var ar = {};
-    ar.uuid = as;
-    ar.time = at;
-    ar.signature = av;
-    return ar;
-  }
-  function ac(al) {
-    var am = ad(),
-      an = Date.now();
-    al.indexOf("?") > 0 && (al = al.substring(0, al.indexOf("?")));
-    CryptoJS = p.createCryptoJS();
-    var ao = CryptoJS.SHA256("".concat(al, "&&").concat(s, "&&").concat(am, "&&").concat(an, "&&").concat(w, "&&").concat(t)).toString(),
-      ap = {
-        uuid: am,
-        time: an,
-        signature: ao
-      };
-    return ap;
-  }
-  function ad() {
-    return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function (am) {
-      var an = 16 * Math.random() | 0,
-        ao = "x" === am ? an : 3 & an | 8;
-      return ao.toString(16);
-    });
-  }
-  function ae(al) {
-    return al[Math.floor(Math.random() * al.length)];
-  }
-  function af() {
-    var al = "1.7.0",
-      am = ad(),
-      an = ae(["M1903F2A", "M2001J2E", "M2001J2C", "M2001J1E", "M2001J1C", "M2002J9E", "M2011K2C", "M2102K1C", "M2101K9C", "2107119DC", "2201123C", "2112123AC", "2201122C", "2211133C", "2210132C", "2304FPN6DC", "23127PN0CC", "24031PN0DC", "23090RA98C", "2312DRA50C", "2312CRAD3C", "2312DRAABC", "22101316UCP", "22101316C"]),
-      ao = "Xiaomi " + an,
-      ap = "Android",
-      aq = "".concat(ap.toUpperCase(), ";").concat("11", ";").concat(v, ";").concat(al, ";1.0;null;").concat(an),
-      ar = "".concat(al, ";").concat(am, ";").concat(ao, ";").concat(ap, ";").concat("11", ";").concat("Release", ";").concat("6.12.0"),
-      as = {
-        ua: aq,
-        commonUa: ar,
-        uuid: am
-      };
-    return as;
-  }
-  function ag(al) {
-    var am = new Date(al),
-      an = new Date();
-    return am.getFullYear() === an.getFullYear() && am.getMonth() === an.getMonth() && am.getDate() === an.getDate();
-  }
-  function ah() {
-    return ai.apply(this, arguments);
-  }
-  function ai() {
-    ai = m(k().mark(function am() {
-      var ao;
-      return k().wrap(function ap(aq) {
-        for (;;) {
-          switch (aq.prev = aq.next) {
-            case 0:
-              if (ao = $.getdata("Utils_Code") || "", !ao || !Object.keys(ao).length) {
-                aq.next = 5;
-                break;
-              }
-              console.log("✅ ".concat($.name, ": 缓存中存在Utils代码, 跳过下载"));
-              eval(ao);
-              return aq.abrupt("return", creatUtils());
-            case 5:
-              console.log("🚀 ".concat($.name, ": 开始下载Utils代码"));
-              return aq.abrupt("return", new Promise(function () {
-                var as = m(k().mark(function at(au) {
-                  return k().wrap(function av(aw) {
-                    for (;;) {
-                      switch (aw.prev = aw.next) {
-                        case 0:
-                          $.getScript("https://mirror.ghproxy.com/https://raw.githubusercontent.com/xzxxn777/Surge/main/Utils/Utils.js").then(function (ay) {
-                            $.setdata(ay, "Utils_Code");
-                            eval(ay);
-                            console.log("✅ Utils加载成功, 请继续");
-                            au(creatUtils());
-                          });
-                        case 1:
-                        case "end":
-                          return aw.stop();
-                      }
-                    }
-                  }, at);
-                }));
-                return function (au) {
-                  return as.apply(this, arguments);
-                };
-              }()));
-            case 7:
-            case "end":
-              return aq.stop();
-          }
+      this.isMute || (this.isSurge() || this.isLoon() ? $notification.post(_0x281b91, _0x2a5e45, _0x441be7, _0x3c126f(_0xd75caf)) : this.isQuanX() && $notify(_0x281b91, _0x2a5e45, _0x441be7, _0x3c126f(_0xd75caf)));
+      let _0x3eabf5 = ["", "============== 系统通知 =============="];
+      _0x3eabf5.push(_0x281b91);
+      _0x2a5e45 && _0x3eabf5.push(_0x2a5e45);
+      _0x441be7 && _0x3eabf5.push(_0x441be7);
+      console.log(_0x3eabf5.join("\n"));
+    }
+    getMin(_0x15962f, _0x2a34e2) {
+      return _0x15962f < _0x2a34e2 ? _0x15962f : _0x2a34e2;
+    }
+    getMax(_0x10b5c9, _0xd6c9d7) {
+      return _0x10b5c9 < _0xd6c9d7 ? _0xd6c9d7 : _0x10b5c9;
+    }
+    padStr(_0x3b72ab, _0x3e7ee5, _0x173b51 = "0") {
+      let _0x444bd6 = String(_0x3b72ab),
+        _0x5a80d4 = _0x3e7ee5 > _0x444bd6.length ? _0x3e7ee5 - _0x444bd6.length : 0,
+        _0xbedc9d = "";
+      for (let _0x3f8956 = 0; _0x3f8956 < _0x5a80d4; _0x3f8956++) {
+        _0xbedc9d += _0x173b51;
+      }
+      _0xbedc9d += _0x444bd6;
+      return _0xbedc9d;
+    }
+    json2str(_0x4cb5d6, _0x36e3c5, _0x2ec4bc = false) {
+      let _0x4d114d = [];
+      for (let _0x207106 of Object.keys(_0x4cb5d6).sort()) {
+        let _0x3811eb = _0x4cb5d6[_0x207106];
+        if (_0x3811eb && _0x2ec4bc) {
+          _0x3811eb = encodeURIComponent(_0x3811eb);
         }
-      }, am);
-    }));
-    return ai.apply(this, arguments);
-  }
-  function aj(al) {
-    return ak.apply(this, arguments);
-  }
-  function ak() {
-    ak = m(k().mark(function al(am) {
-      return k().wrap(function (an) {
-        for (;;) {
-          switch (an.prev = an.next) {
-            case 0:
-              if (!$.isNode()) {
-                an.next = 5;
-                break;
-              }
-              an.next = 3;
-              return notify.sendNotify($.name, am);
-            case 3:
-              an.next = 6;
-              break;
-            case 5:
-              $.msg($.name, "", am);
-            case 6:
-            case "end":
-              return an.stop();
-          }
+        _0x4d114d.push(_0x207106 + "=" + _0x3811eb);
+      }
+      return _0x4d114d.join(_0x36e3c5);
+    }
+    str2json(_0x153294, _0x4b27fb = false) {
+      let _0x593ed4 = {};
+      for (let _0xdc7f24 of _0x153294.split("&")) {
+        if (!_0xdc7f24) {
+          continue;
         }
-      }, al);
-    }));
-    return ak.apply(this, arguments);
-  }
-  m(k().mark(function al() {
-    return k().wrap(function (am) {
-      for (;;) {
-        switch (am.prev = am.next) {
-          case 0:
-            am.next = 2;
-            return K();
-          case 2:
-          case "end":
-            return am.stop();
+        let _0x221d9d = _0xdc7f24.indexOf("=");
+        if (_0x221d9d == -1) {
+          continue;
+        }
+        let _0x48bba3 = _0xdc7f24.substr(0, _0x221d9d),
+          _0x2a45fc = _0xdc7f24.substr(_0x221d9d + 1);
+        if (_0x4b27fb) {
+          _0x2a45fc = decodeURIComponent(_0x2a45fc);
+        }
+        _0x593ed4[_0x48bba3] = _0x2a45fc;
+      }
+      return _0x593ed4;
+    }
+    randomPattern(_0x39c9a4, _0x782889 = "abcdef0123456789") {
+      let _0x167a1 = "";
+      for (let _0x4c9048 of _0x39c9a4) {
+        if (_0x4c9048 == "x") {
+          _0x167a1 += _0x782889.charAt(Math.floor(Math.random() * _0x782889.length));
+        } else {
+          _0x4c9048 == "X" ? _0x167a1 += _0x782889.charAt(Math.floor(Math.random() * _0x782889.length)).toUpperCase() : _0x167a1 += _0x4c9048;
         }
       }
-    }, al);
-  }))().catch(function (am) {
-    $.log(am);
-  }).finally(function () {
-    $.done({});
-  });
-})();
+      return _0x167a1;
+    }
+    randomString(_0x600a62, _0x1be07f = "abcdef0123456789") {
+      let _0x23158e = "";
+      for (let _0x1ed705 = 0; _0x1ed705 < _0x600a62; _0x1ed705++) {
+        _0x23158e += _0x1be07f.charAt(Math.floor(Math.random() * _0x1be07f.length));
+      }
+      return _0x23158e;
+    }
+    randomList(_0x4acba4) {
+      let _0x91a694 = Math.floor(Math.random() * _0x4acba4.length);
+      return _0x4acba4[_0x91a694];
+    }
+    wait(_0x530f72) {
+      return new Promise(_0x3e7b59 => setTimeout(_0x3e7b59, _0x530f72));
+    }
+    async done(_0x5b659f = {}) {
+      await this.showmsg();
+      const _0x1541e5 = new Date().getTime(),
+        _0x2fa0de = (_0x1541e5 - this.startTime) / 1000;
+      console.log("\n" + this.name + " 运行结束，共运行了 " + _0x2fa0de + " 秒！");
+      if (this.isSurge() || this.isQuanX() || this.isLoon()) {
+        $done(_0x5b659f);
+      }
+    }
+  }(_0x1e4724, _0xff6f77);
+}
